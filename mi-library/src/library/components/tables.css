@@ -1,0 +1,67 @@
+@layer components {
+  .table-wrapper {
+    @apply bg-bg-elevated w-full overflow-x-auto rounded-xl border border-current/10;
+  }
+
+  .table {
+    @apply text-text w-full text-left text-sm;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .table-caption {
+    @apply text-text/60 px-4 py-3 text-xs font-semibold tracking-widest uppercase;
+  }
+
+  .table-head th {
+    @apply text-text/70 px-4 py-3 text-xs font-semibold tracking-widest uppercase;
+  }
+
+  .table-cell {
+    @apply border-t border-current/10 px-4 py-3;
+  }
+
+  .table-row {
+    @apply transition-colors;
+  }
+
+  .table-foot td {
+    @apply text-text/60 px-4 py-3 text-xs;
+  }
+
+  .table-striped tbody tr:nth-child(odd) {
+    @apply bg-primary/5;
+  }
+
+  .table-hover tbody tr:hover {
+    @apply bg-primary/10;
+  }
+
+  .table-bordered .table-cell,
+  .table-bordered .table-head th {
+    @apply border border-current/10;
+  }
+
+  .table-compact .table-cell,
+  .table-compact .table-head th {
+    @apply px-3 py-2;
+  }
+
+  .table-sm .table-cell,
+  .table-sm .table-head th {
+    @apply px-3 py-2 text-xs;
+  }
+
+  .table-lg .table-cell,
+  .table-lg .table-head th {
+    @apply px-6 py-4 text-base;
+  }
+
+  .table-sticky thead th {
+    @apply bg-bg-elevated sticky top-0 z-10;
+  }
+
+  .table-wrapper.table-elevated {
+    @apply shadow-xs ring-1 ring-current/5;
+  }
+}

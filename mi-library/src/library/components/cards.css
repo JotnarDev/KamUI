@@ -1,0 +1,90 @@
+@layer components {
+  /* ========================================
+     BASE CARD STYLES
+     ======================================== */
+
+  .card {
+    @apply bg-bg-elevated block rounded-2xl shadow-xs ring-1 ring-current/5;
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:shadow-lg hover:ring-current/10;
+  }
+
+  /* ========================================
+     LAYOUT
+     ======================================== */
+
+  .card-header {
+    @apply text-text px-5 pt-5 text-xl font-semibold tracking-tight;
+  }
+
+  .card-body {
+    @apply text-text px-5 py-4;
+  }
+
+  .card-footer {
+    @apply text-text/70 px-5 pt-3 pb-5 text-sm;
+  }
+
+  /* ========================================
+     MEDIA
+     ======================================== */
+
+  .card-img {
+    @apply w-full rounded-t-2xl object-cover;
+  }
+
+  .card-img-alt {
+    @apply w-full rounded-xl object-cover shadow-sm;
+  }
+
+  /* ========================================
+     VARIANTS
+     ======================================== */
+
+  .card-outline {
+    @apply border border-current/15 bg-transparent shadow-none ring-0;
+  }
+
+  .card-soft {
+    @apply bg-primary/5 ring-primary/10;
+  }
+
+  .card-glass {
+    @apply bg-bg-elevated/70 ring-current/10 backdrop-blur-md;
+  }
+
+  .card-gradient {
+    @apply from-primary/10 via-bg-elevated to-accent/10 bg-gradient-to-br;
+  }
+
+  .card-accent {
+    @apply border-primary border-l-4 pl-4;
+  }
+
+  .card-compact .card-header {
+    @apply px-4 pt-4 text-lg;
+  }
+
+  .card-compact .card-body {
+    @apply px-4 py-3 text-sm;
+  }
+
+  .card-compact .card-footer {
+    @apply px-4 pt-2 pb-4 text-xs;
+  }
+
+  .card-compact.card-accent {
+    @apply pl-3;
+  }
+
+  /* ========================================
+     UTILITIES
+     ======================================== */
+
+  .card-divider {
+    @apply my-4 border-t border-current/10;
+  }
+}

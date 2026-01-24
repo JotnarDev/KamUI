@@ -1,0 +1,83 @@
+@layer components {
+  .popover {
+    @apply relative inline-flex;
+  }
+
+  .popover-panel {
+    @apply bg-bg-elevated text-text absolute z-20 w-72 rounded-xl border border-current/10 p-4 text-sm shadow-lg;
+    display: none;
+  }
+
+  .popover:hover .popover-panel,
+  .popover:focus-within .popover-panel {
+    display: block;
+  }
+
+  .popover-title {
+    @apply text-text mb-1 text-sm font-semibold;
+  }
+
+  .popover-body {
+    @apply text-text/70 text-sm;
+  }
+
+  .popover-arrow {
+    @apply bg-bg-elevated absolute h-3 w-3 rotate-45 border border-current/10;
+  }
+
+  .popover-top {
+    @apply bottom-full left-1/2 mb-3 -translate-x-1/2;
+  }
+
+  .popover-top .popover-arrow {
+    @apply -bottom-1.5 left-1/2 -translate-x-1/2 border-t-0 border-l-0;
+  }
+
+  .popover-bottom {
+    @apply top-full left-1/2 mt-3 -translate-x-1/2;
+  }
+
+  .popover-bottom .popover-arrow {
+    @apply -top-1.5 left-1/2 -translate-x-1/2 border-r-0 border-b-0;
+  }
+
+  .popover-left {
+    @apply top-1/2 right-full mr-3 -translate-y-1/2;
+  }
+
+  .popover-left .popover-arrow {
+    @apply top-1/2 -right-1.5 -translate-y-1/2 border-b-0 border-l-0;
+  }
+
+  .popover-right {
+    @apply top-1/2 left-full ml-3 -translate-y-1/2;
+  }
+
+  .popover-right .popover-arrow {
+    @apply top-1/2 -left-1.5 -translate-y-1/2 border-t-0 border-r-0;
+  }
+
+  .popover-soft {
+    @apply bg-primary/5;
+  }
+
+  .popover-muted {
+    @apply text-text/60;
+  }
+
+  .popover-compact {
+    @apply w-60 p-3;
+  }
+
+  .popover-elevated {
+    @apply shadow-xl ring-1 ring-current/5;
+  }
+
+  .popover-action {
+    @apply text-primary mt-3 inline-flex items-center gap-2 text-xs font-medium;
+  }
+
+  .popover-icon {
+    @apply text-primary/80 h-4 w-4;
+  }
+}

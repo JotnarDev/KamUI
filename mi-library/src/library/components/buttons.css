@@ -1,0 +1,166 @@
+@layer components {
+  /* ========================================
+     BASE BUTTON STYLES
+     ======================================== */
+
+  .button {
+    @apply box-border inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-transparent px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs;
+    @apply transition-all duration-200 ease-in-out focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  /* ========================================
+     SIZES
+     ======================================== */
+
+  .button-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .button-md {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .button-lg {
+    @apply px-5 py-3 text-base;
+  }
+
+  /* ========================================
+     SHAPES
+     ======================================== */
+
+  .button-pill {
+    @apply rounded-full;
+  }
+
+  /* ========================================
+     SOLID VARIANTS
+     ======================================== */
+
+  .button-primary {
+    @apply bg-primary hover:bg-primary-hover focus:bg-primary-focus active:bg-primary-active focus:ring-primary-ring;
+  }
+
+  .button-secondary {
+    @apply bg-secondary hover:bg-secondary-hover focus:bg-secondary-focus active:bg-secondary-active focus:ring-secondary-ring;
+  }
+
+  .button-accent {
+    @apply bg-accent hover:bg-accent-hover focus:bg-accent-focus active:bg-accent-active focus:ring-accent-ring;
+  }
+
+  .button-success {
+    @apply bg-success hover:bg-success-hover focus:bg-success-focus active:bg-success-active focus:ring-success-ring;
+  }
+
+  .button-warning {
+    @apply bg-warning hover:bg-warning-hover focus:bg-warning-focus active:bg-warning-active focus:ring-warning-ring;
+  }
+
+  .button-error {
+    @apply bg-error hover:bg-error-hover focus:bg-error-focus active:bg-error-active focus:ring-error-ring;
+  }
+
+  .button-info {
+    @apply bg-info hover:bg-info-hover focus:bg-info-focus active:bg-info-active focus:ring-info-ring;
+  }
+
+  /* ========================================
+     OUTLINED VARIANTS
+     ======================================== */
+
+  .button-outlined {
+    @apply bg-transparent;
+  }
+
+  .button-outlined-primary {
+    @apply border-primary text-primary hover:bg-primary-hover focus:bg-primary-focus active:bg-primary-active focus:ring-primary-ring hover:text-white;
+  }
+
+  .button-outlined-secondary {
+    @apply border-secondary text-secondary hover:bg-secondary-hover focus:bg-secondary-focus active:bg-secondary-active focus:ring-secondary-ring hover:text-white;
+  }
+
+  .button-outlined-accent {
+    @apply border-accent text-accent hover:bg-accent-hover focus:bg-accent-focus active:bg-accent-active focus:ring-accent-ring hover:text-white;
+  }
+
+  .button-outlined-success {
+    @apply border-success text-success hover:bg-success-hover focus:bg-success-focus active:bg-success-active focus:ring-success-ring hover:text-white;
+  }
+
+  .button-outlined-warning {
+    @apply border-warning text-warning hover:bg-warning-hover focus:bg-warning-focus active:bg-warning-active focus:ring-warning-ring hover:text-white;
+  }
+
+  .button-outlined-error {
+    @apply border-error text-error hover:bg-error-hover focus:bg-error-focus active:bg-error-active focus:ring-error-ring hover:text-white;
+  }
+
+  .button-outlined-info {
+    @apply border-info text-info hover:bg-info-hover focus:bg-info-focus active:bg-info-active focus:ring-info-ring hover:text-white;
+  }
+
+  /* ========================================
+     GHOST VARIANT
+     ======================================== */
+
+  .button-ghost {
+    @apply text-primary hover:bg-primary-hover/15 focus:bg-primary-focus/15 active:bg-primary-active/20 focus:ring-primary-ring bg-transparent;
+  }
+
+  /* ========================================
+     ICONS
+     ======================================== */
+
+  .button-icon-left {
+    @apply mr-1.5 -ml-0.5;
+  }
+
+  .button-icon-right {
+    @apply -mr-0.5 ml-1.5;
+  }
+
+  .button-icon-extra-small {
+    @apply size-3.5;
+  }
+
+  .button-icon-small {
+    @apply size-4;
+  }
+
+  .button-icon-medium {
+    @apply size-5;
+  }
+
+  .button-icon-large {
+    @apply size-6;
+  }
+
+  .button-icon-extra-large {
+    @apply size-7;
+  }
+
+  .button-icon-only {
+    @apply px-2.5;
+  }
+
+  /* ========================================
+     BUTTON GROUPS
+     ======================================== */
+
+  .button-group {
+    @apply inline-flex -space-x-px shadow-xs;
+  }
+
+  .button-group-start {
+    @apply rounded-s-2xl rounded-e-lg;
+  }
+
+  .button-group-middle {
+    @apply rounded-lg;
+  }
+
+  .button-group-end {
+    @apply rounded-s-lg rounded-e-2xl;
+  }
+}

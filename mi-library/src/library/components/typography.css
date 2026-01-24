@@ -1,0 +1,178 @@
+@layer components {
+  /* ========================================
+     TYPOGRAPHY BASE
+     ======================================== */
+
+  .typo {
+    @apply text-slate-900 dark:text-slate-100;
+  }
+
+  .typo-muted {
+    @apply text-slate-500 dark:text-slate-400;
+  }
+
+  /* ========================================
+     HEADINGS
+     ======================================== */
+
+  .heading-1 {
+    @apply text-5xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .heading-4 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  .heading-5 {
+    @apply text-xl font-bold tracking-tight;
+  }
+
+  .heading-6 {
+    @apply text-lg font-bold tracking-tight;
+  }
+
+  /* ========================================
+     PARAGRAPHS
+     ======================================== */
+
+  .paragraph {
+    @apply text-slate-600 dark:text-slate-300;
+  }
+
+  .paragraph-sm {
+    @apply text-sm;
+  }
+
+  .paragraph-base {
+    @apply text-base;
+  }
+
+  .paragraph-lg {
+    @apply text-lg;
+  }
+
+  .paragraph-xl {
+    @apply text-xl;
+  }
+
+  .paragraph-lead {
+    @apply text-lg leading-relaxed;
+  }
+
+  /* ========================================
+     INLINE STYLES
+     ======================================== */
+
+  .typo-link {
+    @apply text-primary font-medium underline underline-offset-2 hover:no-underline;
+  }
+
+  .typo-strong {
+    @apply font-semibold text-slate-900 dark:text-slate-100;
+  }
+
+  .typo-emphasis {
+    @apply italic;
+  }
+
+  .typo-underline {
+    @apply underline;
+  }
+
+  /* ========================================
+     BLOCKQUOTES
+     ======================================== */
+
+  .blockquote {
+    @apply border-primary/40 border-s-4 ps-4 text-slate-900 italic dark:text-slate-100;
+  }
+
+  .blockquote-text {
+    @apply text-lg font-semibold tracking-tight;
+  }
+
+  .blockquote-soft {
+    @apply border-primary/40 rounded-xl border-s-4 bg-slate-50/70 p-4 dark:bg-slate-900/40;
+  }
+
+  .blockquote-icon {
+    @apply text-primary/80 mb-3 h-9 w-9;
+  }
+
+  .blockquote-clean {
+    @apply border-0 ps-0;
+  }
+
+  .blockquote-sm .blockquote-text {
+    @apply text-base;
+  }
+
+  .blockquote-lg .blockquote-text {
+    @apply text-xl;
+  }
+
+  .blockquote-xl .blockquote-text {
+    @apply text-2xl;
+  }
+
+  .blockquote-left {
+    @apply text-left rtl:text-right;
+  }
+
+  .blockquote-center {
+    @apply text-center;
+  }
+
+  .blockquote-right {
+    @apply text-right rtl:text-left;
+  }
+
+  .blockquote-figure {
+    @apply mx-auto max-w-screen-md text-center;
+  }
+
+  .blockquote-cite {
+    @apply mt-6 flex items-center justify-center gap-3;
+  }
+
+  .blockquote-cite-name {
+    @apply font-medium text-slate-900 dark:text-slate-100;
+  }
+
+  .blockquote-cite-role {
+    @apply text-sm text-slate-500 dark:text-slate-400;
+  }
+
+  /* ========================================
+     SPECIAL PARAGRAPHS
+     ======================================== */
+
+  .paragraph-dropcap {
+    @apply first-line:tracking-widest first-line:uppercase;
+    @apply first-letter:float-start first-letter:me-3 first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 dark:first-letter:text-slate-100;
+  }
+
+  /* ========================================
+     ALIGNMENT
+     ======================================== */
+
+  .paragraph-left {
+    @apply text-left rtl:text-right;
+  }
+
+  .paragraph-center {
+    @apply text-center;
+  }
+
+  .paragraph-right {
+    @apply text-right rtl:text-left;
+  }
+}

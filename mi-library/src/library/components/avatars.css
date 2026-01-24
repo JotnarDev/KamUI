@@ -1,0 +1,253 @@
+@layer components {
+  /* ========================================
+     BASE AVATAR STYLES
+     ======================================== */
+
+  .avatar {
+    @apply relative inline-block overflow-hidden rounded-full;
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* ========================================
+     AVATAR SIZES
+     ======================================== */
+
+  .avatar-xs {
+    @apply size-6;
+  }
+
+  .avatar-sm {
+    @apply size-8;
+  }
+
+  .avatar-md {
+    @apply size-10;
+  }
+
+  .avatar-lg {
+    @apply size-12;
+  }
+
+  .avatar-xl {
+    @apply size-14;
+  }
+
+  .avatar-2xl {
+    @apply size-16;
+  }
+
+  .avatar-3xl {
+    @apply size-20;
+  }
+
+  /* ========================================
+     AVATAR SHAPES
+     ======================================== */
+
+  .avatar-square {
+    @apply rounded-xl;
+  }
+
+  .avatar-rounded {
+    @apply rounded-2xl;
+  }
+
+  /* ========================================
+     AVATAR MODIFIERS
+     ======================================== */
+
+  .avatar-bordered {
+    @apply ring-primary/50 ring-offset-bg ring-2 ring-offset-2;
+  }
+
+  .avatar-shadow {
+    @apply shadow-lg;
+  }
+
+  /* ========================================
+     AVATAR WITH ICON
+     ======================================== */
+
+  .avatar-icon {
+    @apply bg-primary/10 text-primary flex items-center justify-center;
+  }
+
+  .avatar-icon svg {
+    @apply h-1/2 w-1/2;
+  }
+
+  /* ========================================
+     AVATAR WITH INITIALS
+     ======================================== */
+
+  .avatar-initials {
+    @apply bg-primary flex items-center justify-center font-semibold text-white;
+  }
+
+  .avatar-xs .avatar-initials-text,
+  .avatar-initials.avatar-xs {
+    @apply text-xs;
+  }
+
+  .avatar-sm .avatar-initials-text,
+  .avatar-initials.avatar-sm {
+    @apply text-sm;
+  }
+
+  .avatar-md .avatar-initials-text,
+  .avatar-initials.avatar-md {
+    @apply text-base;
+  }
+
+  .avatar-lg .avatar-initials-text,
+  .avatar-initials.avatar-lg {
+    @apply text-lg;
+  }
+
+  .avatar-xl .avatar-initials-text,
+  .avatar-initials.avatar-xl {
+    @apply text-xl;
+  }
+
+  .avatar-2xl .avatar-initials-text,
+  .avatar-initials.avatar-2xl {
+    @apply text-2xl;
+  }
+
+  .avatar-3xl .avatar-initials-text,
+  .avatar-initials.avatar-3xl {
+    @apply text-3xl;
+  }
+
+  /* ========================================
+     AVATAR STATUS INDICATORS
+     ======================================== */
+
+  .avatar-status {
+    @apply border-bg absolute h-3 w-3 rounded-full border-2;
+  }
+
+  .avatar-status-top {
+    @apply top-0 right-0;
+  }
+
+  .avatar-status-bottom {
+    @apply right-0 bottom-0;
+  }
+
+  /* Status colors */
+  .avatar-status-available {
+    @apply bg-success;
+  }
+
+  .avatar-status-away {
+    @apply bg-warning;
+  }
+
+  .avatar-status-busy {
+    @apply bg-error;
+  }
+
+  .avatar-status-offline {
+    @apply bg-gray-400;
+  }
+
+  /* Size-specific status indicators */
+  .avatar-xs .avatar-status,
+  .avatar-sm .avatar-status {
+    @apply h-2 w-2;
+  }
+
+  .avatar-lg .avatar-status,
+  .avatar-xl .avatar-status {
+    @apply h-3.5 w-3.5;
+  }
+
+  .avatar-2xl .avatar-status,
+  .avatar-3xl .avatar-status {
+    @apply h-4 w-4 border-[3px];
+  }
+
+  /* ========================================
+     AVATAR GROUPS & STACKING
+     ======================================== */
+
+  .avatar-group {
+    @apply flex items-center;
+  }
+
+  .avatar-group-stacked {
+    @apply flex -space-x-3;
+  }
+
+  .avatar-group-stacked .avatar {
+    @apply border-bg ring-bg border-2 ring-2 transition-transform hover:z-10 hover:scale-110;
+  }
+
+  .avatar-group-counter {
+    @apply bg-primary border-bg flex items-center justify-center rounded-full border-2 text-sm font-semibold text-white;
+  }
+
+  /* ========================================
+     AVATAR COLOR VARIANTS
+     ======================================== */
+
+  .avatar-primary {
+    @apply bg-primary text-white;
+  }
+
+  .avatar-success {
+    @apply bg-success text-white;
+  }
+
+  .avatar-warning {
+    @apply bg-warning text-white;
+  }
+
+  .avatar-error {
+    @apply bg-error text-white;
+  }
+
+  .avatar-info {
+    @apply bg-info text-white;
+  }
+
+  /* Soft variants */
+  .avatar-primary-soft {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .avatar-success-soft {
+    @apply bg-success/10 text-success;
+  }
+
+  .avatar-warning-soft {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .avatar-error-soft {
+    @apply bg-error/10 text-error;
+  }
+
+  .avatar-info-soft {
+    @apply bg-info/10 text-info;
+  }
+
+  /* ========================================
+     AVATAR PLACEHOLDER
+     ======================================== */
+
+  .avatar-placeholder {
+    @apply flex items-center justify-center bg-gray-200 text-gray-500;
+  }
+
+  /* ========================================
+     RESPONSIVE UTILITIES
+     ======================================== */
+
+  @media (max-width: 640px) {
+    .avatar-group-stacked {
+      @apply -space-x-2;
+    }
+  }
+}
