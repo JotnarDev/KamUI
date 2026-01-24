@@ -1,7 +1,10 @@
 {
-  "name": "mi-library",
-  "private": true,
-  "version": "0.0.0",
+  "name": "kamui",
+  "version": "1.0.0",
+  "style": "library/index.css",
+  "files": [
+    "library"
+  ],
   "type": "module",
   "prettier": {
     "plugins": [
@@ -24,6 +27,23 @@
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.24"
+  },
+  "exports": {
+    ".": "./library/index.css",
+    "./color": "./library/theme/color.css",
+    "./alerts": "./library/components/alerts.css",
+    "./avatars": "./library/components/avatars.css",
+    "./badges": "./library/components/badges.css",
+    "./forms": "./library/components/forms.css",
+    "./typography": "./library/components/typography.css",
+    "./breadcrumbs": "./library/components/breadcrumbs.css",
+    "./buttons": "./library/components/buttons.css",
+    "./cards": "./library/components/cards.css",
+    "./tables": "./library/components/tables.css",
+    "./dropdowns": "./library/components/dropdowns.css",
+    "./modals": "./library/components/modals.css",
+    "./tabs": "./library/components/tabs.css",
+    "./popovers": "./library/components/popovers.css"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
