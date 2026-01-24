@@ -4,6 +4,7 @@
 @import './components/components/avatars/avatar.css';
 @import './components/components/badges/badge.css';
 @import './components/components/breadcrumbs/breadcrumb.css';
+@import './components/components/buttons/button.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
