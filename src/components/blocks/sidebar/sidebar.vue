@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-10">
+  <div class="grid gap-8 p-8 md:grid-cols-2 lg:grid-cols-3">
     <!-- 01: Dashboard (iconos, submenus, colapsable) -->
     <section class="space-y-4">
       <div class="flex items-center gap-2">
