@@ -1,0 +1,87 @@
+@layer components {
+  .dropdown {
+    @apply relative inline-block text-left;
+  }
+
+  .dropdown-trigger {
+    @apply bg-bg-elevated text-text inline-flex items-center gap-2 rounded-xl border border-current/10 px-4 py-2 text-sm font-medium shadow-xs;
+    @apply hover:bg-primary/5 focus-visible:ring-primary/30 focus-visible:ring-2 focus-visible:outline-none;
+  }
+
+  .dropdown-caret {
+    @apply text-text/70 h-4 w-4;
+  }
+
+  .dropdown-menu {
+    @apply bg-bg-elevated absolute left-0 z-20 mt-2 min-w-56 rounded-xl border border-current/10 p-2 shadow-lg;
+  }
+
+  .dropdown-label {
+    @apply text-text/60 px-3 py-2 text-xs font-semibold tracking-widest uppercase;
+  }
+
+  .dropdown-item {
+    @apply text-text flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors;
+    @apply hover:bg-primary/10;
+  }
+
+  .dropdown-item-muted {
+    @apply text-text/60;
+  }
+
+  .dropdown-item-active {
+    @apply bg-primary/15 text-text;
+  }
+
+  .dropdown-item-danger {
+    @apply text-error hover:bg-error/10;
+  }
+
+  .dropdown-item-success {
+    @apply text-success hover:bg-success/10;
+  }
+
+  .dropdown-icon {
+    @apply text-text/70 h-4 w-4;
+  }
+
+  .dropdown-divider {
+    @apply my-1 border-t border-current/10;
+  }
+
+  .dropdown-right .dropdown-menu {
+    @apply right-0 left-auto;
+  }
+
+  .dropdown-full .dropdown-menu {
+    @apply w-full;
+  }
+
+  .dropdown-sm .dropdown-trigger {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .dropdown-sm .dropdown-item {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .dropdown-lg .dropdown-trigger {
+    @apply px-4 py-2.5 text-base;
+  }
+
+  .dropdown-lg .dropdown-item {
+    @apply px-3.5 py-2.5 text-base;
+  }
+
+  .dropdown-elevated .dropdown-menu {
+    @apply shadow-xl ring-1 ring-current/5;
+  }
+
+  .dropdown-soft .dropdown-menu {
+    @apply bg-primary/5;
+  }
+
+  .dropdown-check {
+    @apply text-primary h-4 w-4;
+  }
+}

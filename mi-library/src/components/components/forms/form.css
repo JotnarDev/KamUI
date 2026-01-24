@@ -1,0 +1,227 @@
+@layer components {
+  /* ========================================
+     BASE FORM LAYOUT
+     ======================================== */
+
+  .form-page {
+    @apply min-h-screen bg-white px-4 py-10 text-slate-900 dark:bg-gray-950 dark:text-slate-100;
+  }
+
+  .form-wrapper {
+    @apply mx-auto w-full max-w-4xl space-y-10;
+  }
+
+  .form-surface {
+    @apply rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-slate-900/5 backdrop-blur dark:bg-slate-900/70 dark:ring-white/10;
+  }
+
+  .form-section {
+    @apply space-y-4;
+  }
+
+  .form-title {
+    @apply text-3xl font-bold;
+  }
+
+  .form-subtitle {
+    @apply text-sm text-slate-500 dark:text-slate-400;
+  }
+
+  .form-section-title {
+    @apply text-xl font-semibold;
+  }
+
+  .form-divider {
+    @apply my-6 border-t border-slate-200/70 dark:border-white/10;
+  }
+
+  /* ========================================
+     LABELS & HELPERS
+     ======================================== */
+
+  .form-label {
+    @apply mb-2.5 block text-sm font-medium text-slate-700 dark:text-slate-200;
+  }
+
+  .form-help {
+    @apply mt-2 text-xs text-slate-500 dark:text-slate-400;
+  }
+
+  .form-error-text {
+    @apply mt-2 text-xs text-red-500;
+  }
+
+  .form-success-text {
+    @apply mt-2 text-xs text-emerald-600;
+  }
+
+  /* ========================================
+     INPUT BASE
+     ======================================== */
+
+  .form-input {
+    @apply block w-full rounded-2xl border border-slate-300/60 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-xs placeholder:text-slate-400;
+    @apply focus:border-primary/70 focus:ring-primary/20 focus:ring-4 focus:outline-none;
+    @apply dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  .form-input-sm {
+    @apply px-2.5 py-2 text-xs;
+  }
+
+  .form-input-md {
+    @apply px-3 py-2.5 text-sm;
+  }
+
+  .form-input-lg {
+    @apply px-3.5 py-3 text-base;
+  }
+
+  .form-input-xl {
+    @apply px-4 py-3.5 text-base;
+  }
+
+  .form-input-disabled {
+    @apply cursor-not-allowed bg-slate-100 text-slate-400 placeholder:text-slate-400 dark:bg-slate-800/60;
+  }
+
+  /* ========================================
+     INPUT STATES
+     ======================================== */
+
+  .form-input-success {
+    @apply border-emerald-400/60 text-emerald-700 focus:border-emerald-500 focus:ring-emerald-200/60;
+    @apply dark:border-emerald-500/40 dark:text-emerald-300 dark:focus:ring-emerald-500/20;
+  }
+
+  .form-input-error {
+    @apply border-red-400/60 text-red-600 focus:border-red-500 focus:ring-red-200/60;
+    @apply dark:border-red-500/40 dark:text-red-300 dark:focus:ring-red-500/20;
+  }
+
+  /* ========================================
+     FLOATING LABELS
+     ======================================== */
+
+  .form-floating {
+    @apply relative;
+  }
+
+  .form-floating-input {
+    @apply placeholder-transparent;
+  }
+
+  .form-floating-label {
+    @apply pointer-events-none absolute top-2.5 left-3 text-sm text-slate-500 transition-all;
+    @apply peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-sm;
+    @apply peer-focus:text-primary peer-focus:-top-2.5 peer-focus:text-xs;
+    @apply dark:text-slate-400;
+  }
+
+  /* ========================================
+     INPUT WITH ICON
+     ======================================== */
+
+  .form-input-icon-wrap {
+    @apply relative;
+  }
+
+  .form-input-icon {
+    @apply pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-slate-400;
+  }
+
+  .form-input-icon-input {
+    @apply block w-full rounded-2xl border border-slate-300/60 bg-white px-3 py-2.5 pl-9 text-sm text-slate-900 shadow-xs placeholder:text-slate-400;
+    @apply focus:border-primary/70 focus:ring-primary/20 focus:ring-4 focus:outline-none;
+    @apply dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  /* ========================================
+     INPUT GROUPS
+     ======================================== */
+
+  .form-input-group {
+    @apply flex w-full;
+  }
+
+  .form-addon {
+    @apply inline-flex items-center rounded-s-2xl border border-slate-300/60 bg-slate-100 px-3 text-sm text-slate-500 dark:border-white/10 dark:bg-slate-800/70 dark:text-slate-300;
+  }
+
+  .form-input-group .form-input {
+    @apply rounded-none rounded-e-2xl border-l-0;
+  }
+
+  /* ========================================
+     TEXTAREA & SELECT
+     ======================================== */
+
+  .form-textarea {
+    @apply block w-full rounded-2xl border border-slate-300/60 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-xs placeholder:text-slate-400;
+    @apply focus:border-primary/70 focus:ring-primary/20 focus:ring-4 focus:outline-none;
+    @apply dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:placeholder:text-slate-500;
+    @apply min-h-30 resize-y;
+  }
+
+  .form-select {
+    @apply block w-full rounded-2xl border border-slate-300/60 bg-white px-3 py-2.5 pr-10 text-sm text-slate-900 shadow-xs placeholder:text-slate-400;
+    @apply focus:border-primary/70 focus:ring-primary/20 focus:ring-4 focus:outline-none;
+    @apply dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  /* ========================================
+     CHECKBOX & RADIO
+     ======================================== */
+
+  .form-checkbox,
+  .form-radio {
+    @apply text-primary focus:ring-primary/20 h-4 w-4 border border-slate-300/60 bg-white focus:ring-4;
+    @apply dark:border-white/10 dark:bg-slate-900/60;
+  }
+
+  .form-checkbox {
+    @apply rounded;
+  }
+
+  .form-radio {
+    @apply rounded-full;
+  }
+
+  .form-check-label {
+    @apply ms-2 text-sm text-slate-700 dark:text-slate-200;
+  }
+
+  /* ========================================
+     SWITCH
+     ======================================== */
+
+  .form-switch {
+    @apply inline-flex cursor-pointer items-center gap-3;
+  }
+
+  .form-switch-input {
+    @apply sr-only;
+  }
+
+  .form-switch-track {
+    @apply relative h-5 w-9 rounded-full bg-slate-300 transition-colors dark:bg-slate-700;
+    @apply peer-checked:bg-primary;
+  }
+
+  .form-switch-thumb {
+    @apply absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-white transition-transform;
+    @apply peer-checked:translate-x-4;
+  }
+
+  /* ========================================
+     FILE INPUT
+     ======================================== */
+
+  .form-file {
+    @apply block w-full cursor-pointer rounded-2xl border border-slate-300/60 bg-white px-3 py-2.5 text-sm text-slate-700 shadow-xs;
+    @apply focus:border-primary/70 focus:ring-primary/20 focus:ring-4 focus:outline-none;
+    @apply dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200;
+    @apply file:bg-primary/10 file:text-primary file:mr-4 file:rounded-lg file:border-0 file:px-3 file:py-1.5 file:text-sm file:font-medium;
+    @apply hover:file:bg-primary/20;
+  }
+}

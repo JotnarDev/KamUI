@@ -3,8 +3,16 @@
 @import './components/components/alerts/alert.css';
 @import './components/components/avatars/avatar.css';
 @import './components/components/badges/badge.css';
+@import './components/components/forms/form.css';
+@import './components/components/typography/typography.css';
 @import './components/components/breadcrumbs/breadcrumb.css';
 @import './components/components/buttons/button.css';
+@import './components/components/cards/card.css';
+@import './components/components/tables/tables.css';
+@import './components/components/dropdown/dropdown.css';
+@import './components/components/modals/modal.css';
+@import './components/components/tabs/tabs.css';
+@import './components/components/popovers/popovers.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
