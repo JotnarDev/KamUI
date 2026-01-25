@@ -1,0 +1,92 @@
+@layer components {
+  .progress {
+    @apply relative h-3 w-full overflow-hidden rounded-full bg-current/10;
+  }
+
+  .progress-bar {
+    @apply bg-primary h-full rounded-full transition-all duration-300 ease-out;
+  }
+
+  .progress-label {
+    @apply text-text/70 text-xs font-medium;
+  }
+
+  /* Sizes */
+  .progress-sm {
+    @apply h-2;
+  }
+
+  .progress-md {
+    @apply h-3;
+  }
+
+  .progress-lg {
+    @apply h-4;
+  }
+
+  /* Variants */
+  .progress-primary .progress-bar {
+    @apply bg-primary;
+  }
+
+  .progress-secondary .progress-bar {
+    @apply bg-secondary;
+  }
+
+  .progress-accent .progress-bar {
+    @apply bg-accent;
+  }
+
+  .progress-success .progress-bar {
+    @apply bg-success;
+  }
+
+  .progress-warning .progress-bar {
+    @apply bg-warning;
+  }
+
+  .progress-error .progress-bar {
+    @apply bg-error;
+  }
+
+  .progress-info .progress-bar {
+    @apply bg-info;
+  }
+
+  /* Striped */
+  .progress-striped .progress-bar {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.25) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0.25) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+  }
+
+  .progress-animated .progress-bar {
+    animation: progress-stripes 1s linear infinite;
+  }
+
+  @keyframes progress-stripes {
+    0% {
+      background-position: 1rem 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  /* Pill */
+  .progress-pill {
+    @apply rounded-full;
+  }
+
+  .progress-pill .progress-bar {
+    @apply rounded-full;
+  }
+}

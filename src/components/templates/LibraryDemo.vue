@@ -37,6 +37,33 @@
         <a class="button button-ghost justify-start" href="#popovers">
           Popovers
         </a>
+        <a class="button button-ghost justify-start" href="#pagination">
+          Paginación
+        </a>
+        <a class="button button-ghost justify-start" href="#tooltips">
+          Tooltips
+        </a>
+        <a class="button button-ghost justify-start" href="#progress">
+          Progress Bars
+        </a>
+        <a class="button button-ghost justify-start" href="#spinners">
+          Spinners / Loaders
+        </a>
+        <a class="button button-ghost justify-start" href="#toasts">
+          Toasts / Notifications
+        </a>
+        <a class="button button-ghost justify-start" href="#accordion">
+          Accordion / Collapse
+        </a>
+        <a class="button button-ghost justify-start" href="#dividers">
+          Dividers / Separators
+        </a>
+        <a class="button button-ghost justify-start" href="#list-groups">
+          List Groups
+        </a>
+        <a class="button button-ghost justify-start" href="#stepper">
+          Stepper / Wizard
+        </a>
         <a class="button button-ghost justify-start" href="#tables">Tablas</a>
         <a class="button button-ghost justify-start" href="#tabs">Tabs</a>
         <a class="button button-ghost justify-start" href="#typography">
@@ -233,6 +260,175 @@
         </div>
       </section>
 
+      <section id="pagination" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Paginación</h2>
+          <p class="text-text/70">
+            Navegación de listas extensas con variantes, tamaños y estados.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;nav class=&quot;pagination&quot; aria-label=&quot;Pagination&quot;&gt;
+  &lt;ul class=&quot;pagination-list&quot;&gt;
+    &lt;li&gt;&lt;a class=&quot;pagination-link pagination-link-active&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;pagination-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <PaginationDemo />
+        </div>
+      </section>
+
+      <section id="tooltips" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Tooltips</h2>
+          <p class="text-text/70">
+            Microayuda contextual con variantes, tamaños y posiciones.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;tooltip&quot;&gt;
+  &lt;button class=&quot;button button-ghost tooltip-trigger&quot;&gt;Info&lt;/button&gt;
+  &lt;div class=&quot;tooltip-panel tooltip-top&quot;&gt;
+    Tooltip arriba
+    &lt;span class=&quot;tooltip-arrow&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <TooltipDemo />
+        </div>
+      </section>
+
+      <section id="progress" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Progress Bars</h2>
+          <p class="text-text/70">
+            Indicadores de avance con tamaños, variantes y estilos striped.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;progress progress-success&quot;&gt;
+  &lt;div class=&quot;progress-bar&quot; style=&quot;width: 70%&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <ProgressDemo />
+        </div>
+      </section>
+
+      <section id="spinners" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Spinners / Loaders</h2>
+          <p class="text-text/70">
+            Indicadores de carga en variantes ring, dual, dots y bar.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;spinner spinner-primary&quot;&gt;
+  &lt;div class=&quot;spinner-ring&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <SpinnersDemo />
+        </div>
+      </section>
+
+      <section id="toasts" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Toasts / Notifications</h2>
+          <p class="text-text/70">
+            Avisos breves con variantes, tamaños y acciones opcionales.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;toast toast-success&quot;&gt;
+  &lt;div class=&quot;toast-content&quot;&gt;
+    &lt;div class=&quot;toast-title&quot;&gt;Éxito&lt;/div&gt;
+    &lt;p class=&quot;toast-message&quot;&gt;Operación completada.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <ToastsDemo />
+        </div>
+      </section>
+
+      <section id="accordion" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Accordion / Collapse</h2>
+          <p class="text-text/70">
+            Secciones colapsables con variantes y tamaños consistentes.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;accordion&quot;&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;button class=&quot;accordion-trigger&quot;&gt;Título&lt;/button&gt;
+    &lt;div class=&quot;accordion-panel&quot;&gt;Contenido&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <AccordionDemo />
+        </div>
+      </section>
+
+      <section id="dividers" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Dividers / Separators</h2>
+          <p class="text-text/70">
+            Separadores horizontales y verticales con estilos y colores.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;divider divider-dashed&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;divider-with-label&quot;&gt;&lt;span class=&quot;divider-label&quot;&gt;Sección&lt;/span&gt;&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <DividersDemo />
+        </div>
+      </section>
+
+      <section id="list-groups" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">List Groups</h2>
+          <p class="text-text/70">
+            Listas con estados, iconos, badges y variantes de estilo.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;list-group&quot;&gt;
+  &lt;button class=&quot;list-group-item list-group-item-active&quot;&gt;Activo&lt;/button&gt;
+  &lt;button class=&quot;list-group-item&quot;&gt;Item&lt;/button&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <ListGroupsDemo />
+        </div>
+      </section>
+
+      <section id="stepper" class="scroll-mt-24 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold">Stepper / Wizard</h2>
+          <p class="text-text/70">
+            Flujo por pasos con estados, tamaños y variante vertical.
+          </p>
+          <pre class="rounded-xl bg-gray-950 p-4 text-xs text-white/90">
+&lt;div class=&quot;stepper&quot;&gt;
+  &lt;div class=&quot;stepper-item stepper-active&quot;&gt;
+    &lt;span class=&quot;stepper-index&quot;&gt;1&lt;/span&gt;
+    &lt;div class=&quot;stepper-label&quot;&gt;Paso&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+        <div class="bg-bg-elevated rounded-2xl border border-current/10">
+          <StepperDemo />
+        </div>
+      </section>
+
       <section id="tables" class="scroll-mt-24 space-y-4">
         <div class="space-y-2">
           <h2 class="text-2xl font-semibold">Tablas</h2>
@@ -359,6 +555,15 @@ import DropdownDemo from '../components/dropdown/dropdown.vue';
 import FormsDemo from '../components/forms/form.vue';
 import ModalDemo from '../components/modals/modal.vue';
 import PopoverDemo from '../components/popovers/popover.vue';
+import PaginationDemo from '../components/pagination/pagination.vue';
+import TooltipDemo from '../components/tooltips/tooltip.vue';
+import ProgressDemo from '../components/progress/progress.vue';
+import SpinnersDemo from '../components/spinners/spinner.vue';
+import ToastsDemo from '../components/toasts/toast.vue';
+import AccordionDemo from '../components/accordion/accordion.vue';
+import DividersDemo from '../components/dividers/divider.vue';
+import ListGroupsDemo from '../components/list-groups/list-group.vue';
+import StepperDemo from '../components/stepper/stepper.vue';
 import TableDemo from '../components/tables/table.vue';
 import TabsDemo from '../components/tabs/tab.vue';
 import HeadingDemo from '../components/typography/heading.vue';

@@ -1,0 +1,49 @@
+@layer components {
+  .accordion {
+    @apply bg-bg-elevated divide-y divide-current/10 rounded-2xl border border-current/10;
+  }
+
+  .accordion-item {
+    @apply p-4;
+  }
+
+  .accordion-trigger {
+    @apply text-text inline-flex w-full items-center justify-between gap-3 text-left text-sm font-semibold;
+  }
+
+  .accordion-icon {
+    @apply h-4 w-4 transition-transform duration-200;
+  }
+
+  .accordion-panel {
+    @apply text-text/70 mt-2 text-sm;
+  }
+
+  .accordion-muted {
+    @apply text-text/60;
+  }
+
+  .accordion-soft {
+    @apply bg-primary/5 border-primary/10;
+  }
+
+  .accordion-outlined {
+    @apply bg-transparent;
+  }
+
+  .accordion-compact .accordion-item {
+    @apply p-3;
+  }
+
+  .accordion-lg .accordion-item {
+    @apply p-5;
+  }
+
+  .accordion-pill {
+    @apply rounded-full;
+  }
+
+  .accordion-pill .accordion-item {
+    @apply px-6;
+  }
+}

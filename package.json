@@ -53,7 +53,16 @@
     "./popovers": "./library/components/popovers.css",
     "./tables": "./library/components/tables.css",
     "./tabs": "./library/components/tabs.css",
-    "./typography": "./library/components/typography.css"
+    "./typography": "./library/components/typography.css",
+    "./pagination": "./library/components/pagination.css",
+    "./tooltips": "./library/components/tooltips.css",
+    "./progress": "./library/components/progress.css",
+    "./spinners": "./library/components/spinners.css",
+    "./toasts": "./library/components/toasts.css",
+    "./accordion": "./library/components/accordion.css",
+    "./dividers": "./library/components/dividers.css",
+    "./list-groups": "./library/components/list-groups.css",
+    "./stepper": "./library/components/stepper.css"
   },
   "scripts": {
     "dev": "vite",

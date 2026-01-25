@@ -1,0 +1,77 @@
+@layer components {
+  .stepper {
+    @apply flex flex-wrap items-center gap-4;
+  }
+
+  .stepper-vertical {
+    @apply flex-col items-start;
+  }
+
+  .stepper-item {
+    @apply flex items-center gap-3;
+  }
+
+  .stepper-vertical .stepper-item {
+    @apply w-full items-start;
+  }
+
+  .stepper-index {
+    @apply bg-bg-elevated text-text/70 flex h-8 w-8 items-center justify-center rounded-full border border-current/10 text-sm font-semibold;
+  }
+
+  .stepper-label {
+    @apply text-sm font-semibold;
+  }
+
+  .stepper-subtitle {
+    @apply text-text/60 mt-0.5 text-xs;
+  }
+
+  .stepper-line {
+    @apply h-px flex-1 bg-current/10;
+  }
+
+  .stepper-vertical .stepper-line {
+    @apply ml-3 h-8 w-px;
+  }
+
+  .stepper-complete .stepper-index {
+    @apply bg-success border-transparent text-white;
+  }
+
+  .stepper-active .stepper-index {
+    @apply bg-primary border-transparent text-white;
+  }
+
+  .stepper-muted .stepper-index {
+    @apply text-text/50;
+  }
+
+  .stepper-soft .stepper-index {
+    @apply bg-primary/10 text-text;
+  }
+
+  .stepper-outlined .stepper-index {
+    @apply border-current/20 bg-transparent;
+  }
+
+  .stepper-compact .stepper-index {
+    @apply h-6 w-6 text-xs;
+  }
+
+  .stepper-lg .stepper-index {
+    @apply h-10 w-10 text-base;
+  }
+
+  .stepper-pill .stepper-index {
+    @apply rounded-2xl px-3;
+  }
+
+  .stepper-progress {
+    @apply bg-primary/15 h-1 w-full rounded-full;
+  }
+
+  .stepper-progress-bar {
+    @apply bg-primary h-full rounded-full;
+  }
+}

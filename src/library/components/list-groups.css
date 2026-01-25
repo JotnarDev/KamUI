@@ -1,0 +1,62 @@
+@layer components {
+  .list-group {
+    @apply bg-bg-elevated divide-y divide-current/10 rounded-2xl border border-current/10;
+  }
+
+  .list-group-item {
+    @apply text-text flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-medium transition;
+    @apply hover:bg-primary/5;
+  }
+
+  .list-group-item-active {
+    @apply bg-primary/10 text-text;
+  }
+
+  .list-group-item-muted {
+    @apply text-text/60;
+  }
+
+  .list-group-item-disabled {
+    @apply cursor-not-allowed opacity-60 hover:bg-transparent;
+  }
+
+  .list-group-icon {
+    @apply text-text/70 h-4 w-4;
+  }
+
+  .list-group-content {
+    @apply flex flex-1 items-start gap-3;
+  }
+
+  .list-group-title {
+    @apply text-sm font-semibold;
+  }
+
+  .list-group-text {
+    @apply text-text/60 text-xs;
+  }
+
+  .list-group-meta {
+    @apply text-text/50 text-xs;
+  }
+
+  .list-group-badge {
+    @apply bg-primary/15 text-text/80 rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+
+  .list-group-soft {
+    @apply bg-primary/5 border-primary/10;
+  }
+
+  .list-group-outlined {
+    @apply bg-transparent;
+  }
+
+  .list-group-compact .list-group-item {
+    @apply px-3 py-2 text-xs;
+  }
+
+  .list-group-lg .list-group-item {
+    @apply px-5 py-4 text-base;
+  }
+}

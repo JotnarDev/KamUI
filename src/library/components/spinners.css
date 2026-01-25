@@ -1,0 +1,102 @@
+@layer components {
+  .spinner {
+    @apply inline-flex items-center justify-center;
+  }
+
+  .spinner-ring {
+    @apply h-6 w-6 animate-spin rounded-full border-2 border-current/20 border-t-current;
+  }
+
+  .spinner-dual {
+    @apply relative h-6 w-6;
+  }
+
+  .spinner-dual::before,
+  .spinner-dual::after {
+    content: '';
+    @apply absolute inset-0 animate-spin rounded-full border-2 border-current/20 border-t-current;
+  }
+
+  .spinner-dual::after {
+    @apply border-current/10 border-t-current;
+    animation-direction: reverse;
+  }
+
+  .spinner-dots {
+    @apply inline-flex items-center gap-1;
+  }
+
+  .spinner-dot {
+    @apply h-2 w-2 animate-pulse rounded-full bg-current/70;
+  }
+
+  .spinner-bar {
+    @apply h-1 w-16 overflow-hidden rounded-full bg-current/10;
+  }
+
+  .spinner-bar::after {
+    content: '';
+    @apply block h-full w-1/3 animate-pulse rounded-full bg-current;
+  }
+
+  /* Sizes */
+  .spinner-sm .spinner-ring,
+  .spinner-sm .spinner-dual {
+    @apply h-4 w-4;
+  }
+
+  .spinner-md .spinner-ring,
+  .spinner-md .spinner-dual {
+    @apply h-6 w-6;
+  }
+
+  .spinner-lg .spinner-ring,
+  .spinner-lg .spinner-dual {
+    @apply h-9 w-9;
+  }
+
+  .spinner-sm .spinner-dot {
+    @apply h-1.5 w-1.5;
+  }
+
+  .spinner-lg .spinner-dot {
+    @apply h-2.5 w-2.5;
+  }
+
+  .spinner-sm .spinner-bar {
+    @apply h-0.5 w-12;
+  }
+
+  .spinner-lg .spinner-bar {
+    @apply h-1.5 w-20;
+  }
+
+  /* Variants */
+  .spinner-primary {
+    @apply text-primary;
+  }
+
+  .spinner-secondary {
+    @apply text-secondary;
+  }
+
+  .spinner-accent {
+    @apply text-accent;
+  }
+
+  .spinner-success {
+    @apply text-success;
+  }
+
+  .spinner-warning {
+    @apply text-warning;
+  }
+
+  .spinner-error {
+    @apply text-error;
+  }
+
+  .spinner-info {
+    @apply text-info;
+  }
+}

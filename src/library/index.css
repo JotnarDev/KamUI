@@ -12,3 +12,12 @@
 @import './components/modals.css';
 @import './components/tabs.css';
 @import './components/popovers.css';
+@import './components/pagination.css';
+@import './components/tooltips.css';
+@import './components/progress.css';
+@import './components/spinners.css';
+@import './components/toasts.css';
+@import './components/accordion.css';
+@import './components/dividers.css';
+@import './components/list-groups.css';
+@import './components/stepper.css';

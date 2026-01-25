@@ -1,0 +1,112 @@
+@layer components {
+  .tooltip {
+    @apply relative inline-flex items-center;
+  }
+
+  .tooltip-trigger {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .tooltip-panel {
+    @apply bg-text text-bg absolute z-20 max-w-xs rounded-lg px-3 py-2 text-xs font-medium opacity-0 shadow-lg transition-opacity duration-200;
+  }
+
+  .tooltip:hover .tooltip-panel,
+  .tooltip:focus-within .tooltip-panel {
+    @apply opacity-100;
+  }
+
+  .tooltip-arrow {
+    @apply bg-text absolute h-2 w-2 rotate-45;
+  }
+
+  .tooltip-top {
+    @apply -top-2 left-1/2 -translate-x-1/2 -translate-y-full;
+  }
+
+  .tooltip-top .tooltip-arrow {
+    @apply -bottom-1 left-1/2 -translate-x-1/2;
+  }
+
+  .tooltip-bottom {
+    @apply -bottom-2 left-1/2 -translate-x-1/2 translate-y-full;
+  }
+
+  .tooltip-bottom .tooltip-arrow {
+    @apply -top-1 left-1/2 -translate-x-1/2;
+  }
+
+  .tooltip-left {
+    @apply top-1/2 -left-2 -translate-x-full -translate-y-1/2;
+  }
+
+  .tooltip-left .tooltip-arrow {
+    @apply top-1/2 -right-1 -translate-y-1/2;
+  }
+
+  .tooltip-right {
+    @apply top-1/2 -right-2 translate-x-full -translate-y-1/2;
+  }
+
+  .tooltip-right .tooltip-arrow {
+    @apply top-1/2 -left-1 -translate-y-1/2;
+  }
+
+  /* Variants */
+  .tooltip-soft {
+    @apply bg-primary/10 text-text;
+  }
+
+  .tooltip-soft .tooltip-arrow {
+    @apply bg-primary/10;
+  }
+
+  .tooltip-outlined {
+    @apply bg-bg-elevated text-text border border-current/15 shadow-xs;
+  }
+
+  .tooltip-outlined .tooltip-arrow {
+    @apply bg-bg-elevated;
+  }
+
+  .tooltip-success {
+    @apply bg-success text-white;
+  }
+
+  .tooltip-success .tooltip-arrow {
+    @apply bg-success;
+  }
+
+  .tooltip-warning {
+    @apply bg-warning text-white;
+  }
+
+  .tooltip-warning .tooltip-arrow {
+    @apply bg-warning;
+  }
+
+  .tooltip-error {
+    @apply bg-error text-white;
+  }
+
+  .tooltip-error .tooltip-arrow {
+    @apply bg-error;
+  }
+
+  .tooltip-info {
+    @apply bg-info text-white;
+  }
+
+  .tooltip-info .tooltip-arrow {
+    @apply bg-info;
+  }
+
+  /* Sizes */
+  .tooltip-sm {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .tooltip-lg {
+    @apply px-4 py-2.5 text-sm;
+  }
+}
