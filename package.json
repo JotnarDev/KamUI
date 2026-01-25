@@ -1,11 +1,58 @@
 {
   "name": "kamui",
   "version": "1.0.0",
+  "description": "UI component library built on Tailwind CSS 4 for Vue 3",
+  "author": "JotnarDev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JotnarDev/KamUI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JotnarDev/KamUI/issues"
+  },
+  "homepage": "https://github.com/JotnarDev/KamUI#readme",
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "css",
+    "ui",
+    "components",
+    "vue",
+    "vue3",
+    "design-system"
+  ],
   "style": "library/index.css",
   "files": [
     "library"
   ],
   "type": "module",
+  "exports": {
+    ".": "./library/index.css",
+    "./color": "./library/theme/color.css",
+    "./alerts": "./library/components/alerts.css",
+    "./avatars": "./library/components/avatars.css",
+    "./badges": "./library/components/badges.css",
+    "./breadcrumbs": "./library/components/breadcrumbs.css",
+    "./buttons": "./library/components/buttons.css",
+    "./cards": "./library/components/cards.css",
+    "./dropdowns": "./library/components/dropdowns.css",
+    "./forms": "./library/components/forms.css",
+    "./modals": "./library/components/modals.css",
+    "./popovers": "./library/components/popovers.css",
+    "./tables": "./library/components/tables.css",
+    "./tabs": "./library/components/tabs.css",
+    "./typography": "./library/components/typography.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:lib": "vite build && echo '📦 Library ready to publish!'",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
+    "prepublishOnly": "npm run build:lib"
+  },
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"
@@ -16,34 +63,13 @@
     "trailingComma": "es5",
     "printWidth": 80
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\""
-  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.24"
   },
-  "exports": {
-    ".": "./library/index.css",
-    "./color": "./library/theme/color.css",
-    "./alerts": "./library/components/alerts.css",
-    "./avatars": "./library/components/avatars.css",
-    "./badges": "./library/components/badges.css",
-    "./forms": "./library/components/forms.css",
-    "./typography": "./library/components/typography.css",
-    "./breadcrumbs": "./library/components/breadcrumbs.css",
-    "./buttons": "./library/components/buttons.css",
-    "./cards": "./library/components/cards.css",
-    "./tables": "./library/components/tables.css",
-    "./dropdowns": "./library/components/dropdowns.css",
-    "./modals": "./library/components/modals.css",
-    "./tabs": "./library/components/tabs.css",
-    "./popovers": "./library/components/popovers.css"
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
