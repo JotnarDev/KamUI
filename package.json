@@ -1,6 +1,6 @@
 {
   "name": "kamui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UI component library built on Tailwind CSS 4 for Vue 3. Modern, customizable, and easy to use.",
   "author": "JotnarDev <https://github.com/JotnarDev>",
   "license": "MIT",
