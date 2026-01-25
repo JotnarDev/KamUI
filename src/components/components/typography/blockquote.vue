@@ -6,9 +6,9 @@
       <h2 class="text-2xl font-semibold">Base</h2>
       <blockquote class="blockquote">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned pages
-          starting from login screen to complex dashboard. Best choice for your
-          SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned pages starting
+          from login screen to complex dashboard. Best choice for your SaaS
+          application."
         </p>
       </blockquote>
       <p class="paragraph paragraph-base">
@@ -23,15 +23,15 @@
       <h2 class="text-2xl font-semibold">Soft</h2>
       <blockquote class="blockquote blockquote-soft">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
       <p class="paragraph paragraph-base">
-        First of all you need to understand how Flowbite works. This library is
-        not another framework. Rather, it is a set of components based on
-        Tailwind CSS that you can just copy-paste from the documentation.
+        First of all you need to understand how KamUI works. This library is not
+        another framework. Rather, it is a set of components based on Tailwind
+        CSS that you can just copy-paste from the documentation.
       </p>
     </section>
 
@@ -56,9 +56,9 @@
           />
         </svg>
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
     </section>
@@ -82,9 +82,9 @@
         </p>
         <blockquote class="blockquote">
           <p class="blockquote-text">
-            "Flowbite is just awesome. It contains tons of predesigned
-            components and pages starting from login screen to complex
-            dashboard. Perfect choice for your next SaaS application."
+            "KamUI is just awesome. It contains tons of predesigned components
+            and pages starting from login screen to complex dashboard. Perfect
+            choice for your next SaaS application."
           </p>
         </blockquote>
       </div>
@@ -118,9 +118,9 @@
         </svg>
         <blockquote class="blockquote blockquote-clean blockquote-center">
           <p class="blockquote-text blockquote-xl">
-            "Flowbite is just awesome. It contains tons of predesigned
-            components and pages starting from login screen to complex
-            dashboard. Perfect choice for your next SaaS application."
+            "KamUI is just awesome. It contains tons of predesigned components
+            and pages starting from login screen to complex dashboard. Perfect
+            choice for your next SaaS application."
           </p>
         </blockquote>
         <figcaption class="blockquote-cite">
@@ -143,25 +143,25 @@
       <h2 class="text-2xl font-semibold">Alineaciones</h2>
       <blockquote class="blockquote blockquote-left">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
 
       <blockquote class="blockquote blockquote-center">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
 
       <blockquote class="blockquote blockquote-right">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
     </section>
@@ -170,33 +170,33 @@
       <h2 class="text-2xl font-semibold">Tamaños</h2>
       <blockquote class="blockquote blockquote-sm">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
 
       <blockquote class="blockquote">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
 
       <blockquote class="blockquote blockquote-lg">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
 
       <blockquote class="blockquote blockquote-xl">
         <p class="blockquote-text">
-          "Flowbite is just awesome. It contains tons of predesigned components
-          and pages starting from login screen to complex dashboard. Perfect
-          choice for your next SaaS application."
+          "KamUI is just awesome. It contains tons of predesigned components and
+          pages starting from login screen to complex dashboard. Perfect choice
+          for your next SaaS application."
         </p>
       </blockquote>
     </section>

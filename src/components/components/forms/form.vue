@@ -96,10 +96,7 @@
               d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5"
             />
           </svg>
-          <input
-            class="form-input-icon-input"
-            placeholder="name@flowbite.com"
-          />
+          <input class="form-input-icon-input" placeholder="name@KamUI.com" />
         </div>
       </section>
 

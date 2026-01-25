@@ -40,7 +40,7 @@
           </li>
           <li class="breadcrumb-separator" aria-hidden="true">/</li>
           <li aria-current="page">
-            <span class="breadcrumb-current-item">Flowbite</span>
+            <span class="breadcrumb-current-item">KamUI</span>
           </li>
         </ol>
       </nav>
@@ -119,7 +119,7 @@
             </svg>
           </li>
           <li aria-current="page">
-            <span class="breadcrumb-current-item">Flowbite</span>
+            <span class="breadcrumb-current-item">KamUI</span>
           </li>
         </ol>
       </nav>
