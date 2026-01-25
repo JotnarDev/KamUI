@@ -133,6 +133,15 @@ Import only what you need to keep your bundle small:
 | 💬 **Modals**      | Modal windows                               | `kamui/modals`      |
 | 💭 **Popovers**    | Popovers with positions                     | `kamui/popovers`    |
 | ✏️ **Typography**  | Headings, paragraphs, links                 | `kamui/typography`  |
+| 📄 **Pagination**  | Page navigation controls                    | `kamui/pagination`  |
+| 💡 **Tooltips**    | Helpful hover tips                          | `kamui/tooltips`    |
+| 📈 **Progress**    | Progress bars                               | `kamui/progress`    |
+| 🔄 **Spinners**    | Loading indicators                          | `kamui/spinners`    |
+| 🔔 **Toasts**      | Notification messages                       | `kamui/toasts`      |
+| 🪗 **Accordion**   | Collapsible content sections                | `kamui/accordion`   |
+| ➖ **Dividers**    | Visual separators                           | `kamui/dividers`    |
+| 📋 **List Groups** | Grouped list items                          | `kamui/list-groups` |
+| 👣 **Stepper**     | Step-by-step progress                       | `kamui/stepper`     |
 
 ---
 
