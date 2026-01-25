@@ -1,19 +1,21 @@
 # Security Policy
 
-## 🛡️ About KamUI Security
+## Overview
 
 KamUI is a **CSS-only** component library. This means:
 
-- ✅ **No JavaScript runtime** - Only CSS styles, no executable code
-- ✅ **No data collection** - We don't collect any user data
-- ✅ **No external requests** - No API calls or external resources
-- ✅ **No cookies** - We don't use cookies or local storage
+- **No JavaScript runtime** – Only CSS styles, no executable JS
+- **No data collection** – No analytics, tracking, or user data storage
+- **No external requests** – No API calls or remote resources at runtime
+- **No cookies** – No storage or persistence in the browser
 
-This design makes KamUI very secure by default.
+This design reduces the attack surface significantly, but **build and
+dependency vulnerabilities can still affect users**, so we treat security
+reports seriously.
 
 ---
 
-## 📦 Supported Versions
+## Supported Versions
 
 We provide security updates for the following versions:
 
@@ -24,85 +26,82 @@ We provide security updates for the following versions:
 
 ---
 
-## 🚨 Reporting a Vulnerability
+## Reporting a Vulnerability
 
-If you find a security issue, please follow these steps:
+### 1) Do **not** open a public issue
 
-### Step 1: Do NOT open a public issue
+Security issues must be reported privately.
 
-Security issues should be reported privately to protect users.
+### 2) Report privately (preferred)
 
-### Step 2: Report privately
-
-You have two options:
-
-**Option A: GitHub Security Advisory (Recommended)**
+**GitHub Security Advisory (Recommended)**
 
 1. Go to the [Security tab](https://github.com/JotnarDev/KamUI/security)
-2. Click "Report a vulnerability"
+2. Click **Report a vulnerability**
 3. Fill out the form with details
 
-**Option B: Email**
+**Alternative: Contact the maintainer**
 
-- Contact the maintainer through their [GitHub profile](https://github.com/JotnarDev)
+- Reach out via the maintainer’s [GitHub profile](https://github.com/JotnarDev)
 
-### Step 3: Include this information
+### 3) Include the following details
 
-Please include:
+- **Description** of the issue
+- **Steps to reproduce**
+- **Impact** and potential risk
+- **Affected versions** (if known)
+- **Suggested fix** (optional)
 
-- **Description**: What is the vulnerability?
-- **Steps to reproduce**: How can we see the issue?
-- **Impact**: What could happen if exploited?
-- **Suggested fix**: If you have ideas (optional)
+### 4) What happens next
 
-### Step 4: Wait for response
-
-- We will respond within **48 hours**
-- We will work with you to understand the issue
-- We will create a fix and release it
-- We will credit you (if you want) after the fix
-
----
-
-## ⏱️ Response Timeline
-
-| Action            | Time                                 |
-| ----------------- | ------------------------------------ |
-| First response    | Within 48 hours                      |
-| Issue confirmed   | Within 1 week                        |
-| Fix released      | Within 2 weeks (for critical issues) |
-| Public disclosure | After fix is released                |
+- We respond within **48 hours**
+- We verify and triage the report
+- We coordinate a fix and release
+- We credit you upon request after disclosure
 
 ---
 
-## 🔍 What We Consider Security Issues
+## Response Timeline
 
-### ✅ Security issues (please report)
+| Action            | Target timeframe                 |
+| ----------------- | -------------------------------- |
+| First response    | Within 48 hours                  |
+| Issue confirmed   | Within 7 days                    |
+| Fix released      | Within 14 days (critical issues) |
+| Public disclosure | After the fix is released        |
 
-- CSS injection vulnerabilities
-- Malicious code in dependencies
-- Build process vulnerabilities
-- Issues that could affect users of the library
+---
 
-### ❌ Not security issues (open regular issue)
+## What We Consider a Security Issue
 
-- Visual bugs or styling issues
-- Browser compatibility problems
+### ✅ In scope
+
+- CSS injection or unsafe CSS processing
+- Malicious or compromised dependencies
+- Build or release pipeline vulnerabilities
+- Any issue that could impact library consumers
+
+### ❌ Out of scope (open a regular issue instead)
+
+- Visual bugs or styling defects
+- Browser compatibility issues
 - Feature requests
 - Documentation errors
 
 ---
 
-## 🛠️ Security Best Practices for Users
+## Best Practices for Users
 
 When using KamUI in your project:
 
-### 1. Keep dependencies updated
+1. **Keep dependencies updated**
+2. **Use lockfiles** (`package-lock.json`, `pnpm-lock.yaml`, or `yarn.lock`)
+3. **Audit your dependencies** regularly
+
+Suggested commands:
 
 ```bash
-# Check for updates
 npm outdated
-
-# Update to latest version
+npm audit
 npm update kamui
 ```
