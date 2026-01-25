@@ -1,8 +1,8 @@
 {
   "name": "kamui",
   "version": "1.0.0",
-  "description": "UI component library built on Tailwind CSS 4 for Vue 3",
-  "author": "JotnarDev",
+  "description": "UI component library built on Tailwind CSS 4 for Vue 3. Modern, customizable, and easy to use.",
+  "author": "JotnarDev <https://github.com/JotnarDev>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,21 +15,32 @@
   "keywords": [
     "tailwindcss",
     "tailwind",
+    "tailwind-css-4",
     "css",
     "ui",
+    "ui-components",
     "components",
+    "component-library",
     "vue",
     "vue3",
-    "design-system"
-  ],
-  "style": "library/index.css",
-  "files": [
-    "library"
+    "design-system",
+    "dark-mode",
+    "theme"
   ],
   "type": "module",
+  "style": "library/index.css",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "library",
+    "LICENSE",
+    "README.md"
+  ],
   "exports": {
     ".": "./library/index.css",
     "./color": "./library/theme/color.css",
+    "./theme": "./library/theme/color.css",
     "./alerts": "./library/components/alerts.css",
     "./avatars": "./library/components/avatars.css",
     "./badges": "./library/components/badges.css",
@@ -53,6 +64,32 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
     "prepublishOnly": "npm run build:lib"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "vite": "^7.2.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"
@@ -62,19 +99,5 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "printWidth": 80
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18",
-    "vue": "^3.5.24"
-  },
-  "peerDependencies": {
-    "tailwindcss": "^4.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "vite": "^7.2.4"
   }
 }
