@@ -1,16 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { existsSync, readFileSync } from 'fs'
-import { resolve } from 'path'
-
-// Helper: check if file exists
-function fileExists(filePath) {
-    return existsSync(resolve(process.cwd(), filePath))
-}
-
-// Helper: read file content
-function readFile(filePath) {
-    return readFileSync(resolve(process.cwd(), filePath), 'utf-8')
-}
+import { fileExists, readFile, getCSSFiles } from './helpers.js'
 
 describe('Library Files', () => {
 
@@ -85,34 +74,13 @@ describe('Library Files', () => {
     })
 
     describe('Component files are not empty', () => {
-        const components = [
-            'alerts',
-            'avatars',
-            'badges',
-            'breadcrumbs',
-            'buttons',
-            'cards',
-            'dropdowns',
-            'forms',
-            'modals',
-            'popovers',
-            'tables',
-            'tabs',
-            'typography',
-            'pagination',
-            'tooltips',
-            'progress',
-            'spinners',
-            'toasts',
-            'accordion',
-            'dividers',
-            'list-groups',
-            'stepper',
-        ]
+        const cssFiles = getCSSFiles('src/library/components')
 
-        components.forEach((component) => {
-            it(`${component}.css should not be empty`, () => {
-                const content = readFile(`src/library/components/${component}.css`)
+        cssFiles.forEach((filePath) => {
+            const fileName = filePath.split('/').pop()
+
+            it(`${fileName} should not be empty`, () => {
+                const content = readFile(filePath)
                 expect(content.length).toBeGreaterThan(0)
             })
         })
