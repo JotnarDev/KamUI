@@ -1,0 +1,111 @@
+# ======================
+# SOURCE FILES
+# ======================
+# These are for development, not needed in npm package
+src/
+tests/
+
+# ======================
+# CONFIGURATION FILES
+# ======================
+# Build and dev config
+vite.config.js
+vitest.config.js
+.prettierrc
+.prettierignore
+.editorconfig
+tsconfig.json
+jsconfig.json
+
+# ======================
+# GIT FILES
+# ======================
+.git/
+.gitignore
+.gitattributes
+
+# ======================
+# GITHUB FILES
+# ======================
+.github/
+
+# ======================
+# DOCUMENTATION
+# ======================
+# README and LICENSE are included via package.json "files" field
+# These other docs are not needed in npm
+CONTRIBUTING.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+docs/
+
+# ======================
+# IDE AND EDITOR
+# ======================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.editorconfig
+
+# ======================
+# OS FILES
+# ======================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ======================
+# DEPENDENCIES
+# ======================
+node_modules/
+
+# ======================
+# BUILD OUTPUT
+# ======================
+# dist is for demo app, not the library
+dist/
+dist-ssr/
+
+# ======================
+# LOGS
+# ======================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ======================
+# TEST AND COVERAGE
+# ======================
+coverage/
+.nyc_output/
+*.lcov
+
+# ======================
+# MISC
+# ======================
+*.local
+*.env
+*.env.*
+.cache/
+.temp/
+.tmp/
+
+# ======================
+# DEMO AND EXAMPLES
+# ======================
+# Demo app files (not needed in npm package)
+index.html
+public/
+
+# ======================
+# LOCK FILES
+# ======================
+# Users will generate their own
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
