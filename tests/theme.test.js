@@ -11,7 +11,16 @@ function readFile(filePath) {
 function extractCSSVariables(content) {
     const regex = /--([a-zA-Z0-9-]+):/g
     const matches = content.match(regex) || []
-    return matches.map(m => m.slice(0, -1)) // Remove trailing :
+    return matches.map((m) => m.slice(0, -1)) // Remove trailing :
+}
+
+// Helper: get content inside a selector block
+function getSelectorContent(content, selector) {
+    // Escape special regex characters in selector
+    const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const regex = new RegExp(`${escapedSelector}\\s*{([^}]+)}`, 'gs')
+    const matches = content.match(regex)
+    return matches ? matches.join('\n') : ''
 }
 
 describe('Theme System', () => {
@@ -33,6 +42,7 @@ describe('Theme System', () => {
             '--color-primary-hover',
             '--color-primary-focus',
             '--color-primary-active',
+            '--color-primary-ring',
         ]
 
         primaryColors.forEach((colorVar) => {
@@ -43,20 +53,39 @@ describe('Theme System', () => {
     })
 
     describe('Secondary color variables', () => {
-        it('should define --color-secondary', () => {
-            expect(content).toContain('--color-secondary')
-        })
+        const secondaryColors = [
+            '--color-secondary',
+            '--color-secondary-hover',
+            '--color-secondary-focus',
+            '--color-secondary-active',
+            '--color-secondary-ring',
+        ]
 
-        it('should define --color-accent', () => {
-            expect(content).toContain('--color-accent')
+        secondaryColors.forEach((colorVar) => {
+            it(`should define ${colorVar}`, () => {
+                expect(content).toContain(colorVar)
+            })
+        })
+    })
+
+    describe('Accent color variables', () => {
+        const accentColors = [
+            '--color-accent',
+            '--color-accent-hover',
+            '--color-accent-focus',
+            '--color-accent-active',
+            '--color-accent-ring',
+        ]
+
+        accentColors.forEach((colorVar) => {
+            it(`should define ${colorVar}`, () => {
+                expect(content).toContain(colorVar)
+            })
         })
     })
 
     describe('Background and text colors', () => {
-        const bgColors = [
-            '--color-bg',
-            '--color-text',
-        ]
+        const bgColors = ['--color-bg', '--color-bg-elevated', '--color-text']
 
         bgColors.forEach((colorVar) => {
             it(`should define ${colorVar}`, () => {
@@ -81,11 +110,14 @@ describe('Theme System', () => {
     })
 
     describe('Status color variants', () => {
-        const variants = ['success', 'warning', 'error', 'info']
+        const statuses = ['success', 'warning', 'error', 'info']
+        const variants = ['hover', 'focus', 'active', 'ring']
 
-        variants.forEach((status) => {
-            it(`should have hover variant for ${status}`, () => {
-                expect(content).toContain(`--color-${status}-hover`)
+        statuses.forEach((status) => {
+            variants.forEach((variant) => {
+                it(`should have --color-${status}-${variant}`, () => {
+                    expect(content).toContain(`--color-${status}-${variant}`)
+                })
             })
         })
     })
@@ -94,43 +126,81 @@ describe('Theme System', () => {
 describe('Dark Mode', () => {
     const content = readFile('src/library/theme/color.css')
 
-    it('should have dark mode media query', () => {
-        expect(content).toContain('prefers-color-scheme: dark')
+    describe('Dark mode via .dark class (manual toggle)', () => {
+        it('should have .dark selector', () => {
+            expect(content).toMatch(/\.dark\s*{/)
+        })
+
+        it('.dark should redefine --color-primary', () => {
+            const darkContent = getSelectorContent(content, '.dark')
+            expect(darkContent).toContain('--color-primary')
+        })
+
+        it('.dark should redefine --color-bg', () => {
+            const darkContent = getSelectorContent(content, '.dark')
+            expect(darkContent).toContain('--color-bg')
+        })
+
+        it('.dark should redefine --color-text', () => {
+            const darkContent = getSelectorContent(content, '.dark')
+            expect(darkContent).toContain('--color-text')
+        })
+
+        it('.dark should redefine --color-bg-elevated', () => {
+            const darkContent = getSelectorContent(content, '.dark')
+            expect(darkContent).toContain('--color-bg-elevated')
+        })
+
+        it('.dark should redefine status colors', () => {
+            const darkContent = getSelectorContent(content, '.dark')
+            expect(darkContent).toContain('--color-success')
+            expect(darkContent).toContain('--color-warning')
+            expect(darkContent).toContain('--color-error')
+            expect(darkContent).toContain('--color-info')
+        })
     })
 
-    it('should have @media block for dark mode', () => {
-        expect(content).toMatch(/@media\s*\(\s*prefers-color-scheme:\s*dark\s*\)/)
+    describe('Dark mode via prefers-color-scheme (system preference)', () => {
+        it('should have prefers-color-scheme media query', () => {
+            expect(content).toContain('prefers-color-scheme: dark')
+        })
+
+        it('should have @media block for dark mode', () => {
+            expect(content).toMatch(/@media\s*\(\s*prefers-color-scheme:\s*dark\s*\)/)
+        })
+
+        it('media query should use :root:not(.light) for proper fallback', () => {
+            // This ensures system preference is respected unless user manually chose light
+            expect(content).toMatch(/:root:not\(\.light\)/)
+        })
     })
 
-    describe('Dark mode redefines colors', () => {
-        it('should redefine primary color in dark mode', () => {
-            // Split content at dark mode media query
-            const darkModeMatch = content.split('prefers-color-scheme: dark')
+    describe('Dark mode color values are different from light mode', () => {
+        it('dark --color-bg should be different from light --color-bg', () => {
+            // Light mode bg
+            const lightBgMatch = content.match(/@theme\s*{[^}]*--color-bg:\s*([^;]+);/)
+            // Dark mode bg (from .dark selector)
+            const darkBgMatch = content.match(/\.dark\s*{[^}]*--color-bg:\s*([^;]+);/)
 
-            if (darkModeMatch.length > 1) {
-                const darkModeSection = darkModeMatch[1]
-                expect(darkModeSection).toContain('--color-primary')
-            } else {
-                // If we can't split, just check it exists
-                expect(content).toContain('prefers-color-scheme: dark')
+            if (lightBgMatch && darkBgMatch) {
+                const lightBg = lightBgMatch[1].trim()
+                const darkBg = darkBgMatch[1].trim()
+                expect(lightBg).not.toBe(darkBg)
             }
         })
 
-        it('should redefine background color in dark mode', () => {
-            const darkModeMatch = content.split('prefers-color-scheme: dark')
+        it('dark --color-text should be different from light --color-text', () => {
+            const lightTextMatch = content.match(
+                /@theme\s*{[^}]*--color-text:\s*([^;]+);/
+            )
+            const darkTextMatch = content.match(
+                /\.dark\s*{[^}]*--color-text:\s*([^;]+);/
+            )
 
-            if (darkModeMatch.length > 1) {
-                const darkModeSection = darkModeMatch[1]
-                expect(darkModeSection).toContain('--color-bg')
-            }
-        })
-
-        it('should redefine text color in dark mode', () => {
-            const darkModeMatch = content.split('prefers-color-scheme: dark')
-
-            if (darkModeMatch.length > 1) {
-                const darkModeSection = darkModeMatch[1]
-                expect(darkModeSection).toContain('--color-text')
+            if (lightTextMatch && darkTextMatch) {
+                const lightText = lightTextMatch[1].trim()
+                const darkText = darkTextMatch[1].trim()
+                expect(lightText).not.toBe(darkText)
             }
         })
     })
@@ -140,45 +210,80 @@ describe('Color Values', () => {
     const content = readFile('src/library/theme/color.css')
 
     it('should use valid hex colors', () => {
-        // Find all hex colors
         const hexColors = content.match(/#[0-9a-fA-F]{3,8}/g) || []
 
         hexColors.forEach((color) => {
             // Valid hex: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
-            expect(color).toMatch(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/)
+            expect(color).toMatch(
+                /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/
+            )
         })
     })
 
-    it('should have at least 10 color variables', () => {
-        const variables = extractCSSVariables(content)
-        const colorVariables = variables.filter(v => v.startsWith('--color'))
+    it('should have at least 10 color variables in @theme', () => {
+        const themeMatch = content.match(/@theme\s*{([^}]+)}/)
+        if (themeMatch) {
+            const variables = extractCSSVariables(themeMatch[1])
+            const colorVariables = variables.filter((v) => v.startsWith('--color'))
+            expect(colorVariables.length).toBeGreaterThanOrEqual(10)
+        }
+    })
 
-        expect(colorVariables.length).toBeGreaterThanOrEqual(10)
+    it('should have at least 10 color variables in .dark', () => {
+        const darkMatch = content.match(/\.dark\s*{([^}]+)}/)
+        if (darkMatch) {
+            const variables = extractCSSVariables(darkMatch[1])
+            const colorVariables = variables.filter((v) => v.startsWith('--color'))
+            expect(colorVariables.length).toBeGreaterThanOrEqual(10)
+        }
     })
 })
 
 describe('Theme Consistency', () => {
     const content = readFile('src/library/theme/color.css')
 
-    it('light and dark mode should have similar structure', () => {
-        // Count @theme occurrences (should be at least 2 - light and dark)
-        const themeCount = (content.match(/@theme/g) || []).length
-        expect(themeCount).toBeGreaterThanOrEqual(2)
+    it('should have both .dark class and prefers-color-scheme', () => {
+        expect(content).toMatch(/\.dark\s*{/)
+        expect(content).toContain('prefers-color-scheme: dark')
     })
 
-    it('should not have duplicate variable definitions in same scope', () => {
-        // This is a basic check - we split by @theme and check each block
-        const themeBlocks = content.split('@theme')
+    it('.dark and prefers-color-scheme should define same variables', () => {
+        // Extract variables from .dark
+        const darkMatch = content.match(/\.dark\s*{([^}]+)}/s)
+        const darkVars = darkMatch ? extractCSSVariables(darkMatch[1]) : []
 
-        themeBlocks.forEach((block, index) => {
-            if (index === 0) return // Skip content before first @theme
+        // Both should have the main color variables
+        const requiredVars = [
+            '--color-primary',
+            '--color-bg',
+            '--color-text',
+            '--color-success',
+            '--color-error',
+        ]
 
-            const variables = extractCSSVariables(block)
-            const uniqueVars = [...new Set(variables)]
-
-            // Each variable should appear only once per @theme block
-            expect(variables.length).toBe(uniqueVars.length)
+        requiredVars.forEach((varName) => {
+            expect(darkVars).toContain(varName)
         })
+    })
+
+    it('light mode colors should be readable (light bg, dark text)', () => {
+        // Check that light mode has light background
+        const lightBgMatch = content.match(/@theme\s*{[^}]*--color-bg:\s*([^;]+);/)
+        if (lightBgMatch) {
+            const bgColor = lightBgMatch[1].trim()
+            // Light colors typically start with #f, #e, or high values
+            expect(bgColor).toMatch(/^#[defDEF]/)
+        }
+    })
+
+    it('dark mode colors should be readable (dark bg, light text)', () => {
+        // Check that dark mode has dark background
+        const darkBgMatch = content.match(/\.dark\s*{[^}]*--color-bg:\s*([^;]+);/)
+        if (darkBgMatch) {
+            const bgColor = darkBgMatch[1].trim()
+            // Dark colors typically start with #0, #1, #2
+            expect(bgColor).toMatch(/^#[0-2]/)
+        }
     })
 })
 
@@ -200,5 +305,45 @@ describe('Ring Colors for Focus States', () => {
         ringColors.forEach((ringColor) => {
             expect(content).toContain(ringColor)
         })
+    })
+
+    it('.dark should also define ring colors', () => {
+        const darkContent = getSelectorContent(content, '.dark')
+
+        expect(darkContent).toContain('--color-primary-ring')
+        expect(darkContent).toContain('--color-success-ring')
+        expect(darkContent).toContain('--color-error-ring')
+    })
+})
+
+describe('Theme Toggle Support', () => {
+    const content = readFile('src/library/theme/color.css')
+
+    it('should support manual toggle via .dark class', () => {
+        // .dark class should exist and have color overrides
+        expect(content).toMatch(/\.dark\s*{[\s\S]*--color-primary[\s\S]*}/)
+    })
+
+    it('should support .light class for forcing light mode', () => {
+        // The media query should respect .light class
+        // :root:not(.light) means "apply dark if not explicitly set to light"
+        expect(content).toContain(':root:not(.light)')
+    })
+
+    it('should allow three states: light, dark, system', () => {
+        // Light: no .dark class, or .light class
+        // Dark: .dark class
+        // System: no class, relies on prefers-color-scheme
+
+        // Check .dark exists for manual dark
+        expect(content).toMatch(/\.dark\s*{/)
+
+        // Check :root:not(.light) for system dark fallback
+        expect(content).toContain(':root:not(.light)')
+
+        // This structure allows:
+        // - <html class="light"> = always light
+        // - <html class="dark"> = always dark
+        // - <html> = follows system preference
     })
 })

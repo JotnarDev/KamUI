@@ -77,6 +77,13 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,vue,css,scss,md}\"",
     "check": "npm run format:check && npm run test",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
+    "release:patch": "npm run check && npm run build:lib && npm version patch -m \"🚀 Release v%s\" && git push && git push --tags && npm publish --access public",
+    "release:minor": "npm run check && npm run build:lib && npm version minor -m \"🚀 Release v%s\" && git push && git push --tags && npm publish --access public",
+    "release:major": "npm run check && npm run build:lib && npm version major -m \"🚀 Release v%s\" && git push && git push --tags && npm publish --access public",
+    "release": "npm run release:patch",
     "prepublishOnly": "npm run check && npm run build:lib"
   },
   "engines": {
