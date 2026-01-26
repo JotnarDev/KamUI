@@ -1,8 +1,7 @@
 <div align="center">
   
-# 🎨 KamUI
-
-**Modern CSS Component Library for Tailwind CSS 4**
+<!-- Banner -->
+<img src=".github/assets/banner.svg" alt="KamUI - Modern CSS Component Library" width="100%">
 
 [![npm version](https://img.shields.io/npm/v/kamui.svg?style=flat-square)](https://www.npmjs.com/package/kamui)
 [![npm downloads](https://img.shields.io/npm/dm/kamui.svg?style=flat-square)](https://www.npmjs.com/package/kamui)
