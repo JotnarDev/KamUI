@@ -1,6 +1,6 @@
 {
   "name": "kamui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Modern CSS component library built on Tailwind CSS 4. Framework-agnostic with zero JavaScript runtime. Works with Vue, React, Astro, Svelte, Angular, and more.",
   "author": "JotnarDev <https://github.com/JotnarDev>",
   "license": "MIT",
