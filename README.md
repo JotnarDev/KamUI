@@ -1,7 +1,11 @@
 <div align="center">
   
 <!-- Banner -->
-<img src=".github/assets/banner.svg" alt="KamUI - Modern CSS Component Library" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".github/assets/banner.svg">
+  <img alt="KamUI - Modern CSS Component Library for Tailwind CSS 4" src=".github/assets/banner.svg" width="100%">
+</picture>
 
 [![npm version](https://img.shields.io/npm/v/kamui.svg?style=flat-square)](https://www.npmjs.com/package/kamui)
 [![npm downloads](https://img.shields.io/npm/dm/kamui.svg?style=flat-square)](https://www.npmjs.com/package/kamui)
