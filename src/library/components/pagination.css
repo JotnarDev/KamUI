@@ -17,7 +17,7 @@
   }
 
   .pagination-link-active {
-    @apply bg-primary hover:bg-primary-hover focus:ring-primary-ring text-white focus:ring-4;
+    @apply bg-primary hover:bg-primary-hover focus:ring-primary-ring text-on-primary focus:ring-4;
   }
 
   .pagination-link-disabled {
@@ -42,7 +42,7 @@
   }
 
   .pagination-soft .pagination-link-active {
-    @apply bg-primary text-white;
+    @apply bg-primary text-on-primary;
   }
 
   .pagination-outlined .pagination-link {
@@ -54,7 +54,7 @@
   }
 
   .pagination-solid .pagination-link-active {
-    @apply bg-primary text-white;
+    @apply bg-primary text-on-primary;
   }
 
   .pagination-pill .pagination-link {

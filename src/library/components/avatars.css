@@ -81,7 +81,7 @@
      ======================================== */
 
   .avatar-initials {
-    @apply bg-primary flex items-center justify-center font-semibold text-white;
+    @apply bg-primary text-on-primary flex items-center justify-center font-semibold;
   }
 
   .avatar-xs .avatar-initials-text,
@@ -185,7 +185,7 @@
   }
 
   .avatar-group-counter {
-    @apply bg-primary border-bg flex items-center justify-center rounded-full border-2 text-sm font-semibold text-white;
+    @apply bg-primary border-bg text-on-primary flex items-center justify-center rounded-full border-2 text-sm font-semibold;
   }
 
   /* ========================================
@@ -193,7 +193,7 @@
      ======================================== */
 
   .avatar-primary {
-    @apply bg-primary text-white;
+    @apply bg-primary text-on-primary;
   }
 
   .avatar-success {
@@ -209,7 +209,7 @@
   }
 
   .avatar-info {
-    @apply bg-info text-white;
+    @apply bg-info text-on-info;
   }
 
   /* Soft variants */

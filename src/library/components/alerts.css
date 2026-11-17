@@ -118,7 +118,7 @@
      ======================================== */
 
   .alert-default-solid {
-    @apply bg-primary text-white;
+    @apply bg-primary text-on-primary;
   }
 
   .alert-success-solid {
@@ -134,7 +134,7 @@
   }
 
   .alert-info-solid {
-    @apply bg-info text-white;
+    @apply bg-info text-on-info;
   }
 
   /* ========================================

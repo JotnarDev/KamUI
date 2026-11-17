@@ -624,7 +624,8 @@ KamUI uses CSS custom properties (variables) for theming, defined with Tailwind 
 
 | Variable            | Light Mode | Dark Mode |
 | ------------------- | ---------- | --------- |
-| `--color-primary`   | `#2f27ce`  | `#3a31d8` |
+| `--color-primary`   | `#2f27ce`  | `#8b85ff` |
+| `--color-on-primary`| `#ffffff`  | `#010104` |
 | `--color-secondary` | `#dddbff`  | `#020024` |
 | `--color-accent`    | `#443dff`  | `#0600c2` |
 | `--color-bg`        | `#fbfbfe`  | `#010104` |
@@ -632,7 +633,9 @@ KamUI uses CSS custom properties (variables) for theming, defined with Tailwind 
 | `--color-success`   | `#059669`  | `#10b981` |
 | `--color-warning`   | `#d97706`  | `#f59e0b` |
 | `--color-error`     | `#dc2626`  | `#ef4444` |
-| `--color-info`      | `#0284c7`  | `#06b6d4` |
+| `--color-info`      | `#0369a1`  | `#38bdf8` |
+| `--color-on-info`   | `#ffffff`  | `#010104` |
+| `--color-atom`      | `#0891b2`  | `#22d3ee` |
 
 ### Customizing Colors
 
@@ -649,6 +652,7 @@ Override the theme colors in your CSS:
   --color-primary-focus: #a78bfa;
   --color-primary-active: #6d28d9;
   --color-primary-ring: #ddd6fe;
+  --color-on-primary: #ffffff; /* text on solid primary fills */
 }
 
 /* Override dark mode colors */
@@ -663,7 +667,7 @@ Override the theme colors in your CSS:
 The theme colors work as Tailwind utilities:
 
 ```html
-<div class="bg-primary text-white">Primary background</div>
+<div class="bg-primary text-on-primary">Primary background</div>
 <div class="text-success">Success text</div>
 <div class="border-error">Error border</div>
 <div class="bg-bg-elevated">Elevated background</div>

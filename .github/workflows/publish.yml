@@ -1,70 +1,89 @@
 # ==============================================
-# CI - Continuous Integration
+# Publish to npm
 # ==============================================
-# This workflow runs on every push and pull request
-# It checks that the code is formatted and tests pass
+# Runs when a version tag (v1.2.3) is pushed:
+#   1. Checks the tag matches package.json "version"
+#   2. Runs format check, tests and build (via prepublishOnly)
+#   3. Publishes to npm with provenance (trusted publishing, no token)
+#   4. Creates the GitHub Release using the matching CHANGELOG section
+#
+# One-time setup on npmjs.com → package "kamui" → Settings →
+# Trusted Publisher → GitHub Actions:
+#   Organization or user: JotnarDev
+#   Repository:           KamUI
+#   Workflow filename:    publish.yml
+#   Environment:          npm
 
-name: CI
+name: Publish
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write # create the GitHub Release
+  id-token: write # npm trusted publishing + provenance
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 jobs:
-  # ============================================
-  # Job: Check code quality and run tests
-  # ============================================
-  check:
-    name: Check Code
+  publish:
+    name: Publish to npm
     runs-on: ubuntu-latest
+    environment: npm
 
     steps:
-      # Step 1: Download the repository code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js environment
+      # Trusted publishing needs npm >= 11.5.1, which ships with Node 24
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
 
-      # Step 3: Install project dependencies
-      - name: Install dependencies
-        run: npm ci
-
-      # Step 4: Check code formatting with Prettier
-      - name: Check format
-        run: npm run format:check
-
-      # Step 5: Run all tests
-      - name: Run tests
-        run: npm run test
-
-      # Step 6: Build the project
-      - name: Build
-        run: npm run build
-
-      # Step 7: Verify library folder was created
-      - name: Verify library output
+      - name: Check tag matches package.json
         run: |
-          if [ -d "library" ]; then
-            echo "✅ Library folder created successfully"
-            echo "📁 Contents:"
-            ls -la library/
-            echo ""
-            echo "📁 Components:"
-            ls -la library/components/
-          else
-            echo "❌ Library folder not found"
+          PKG_VERSION="v$(node -p "require('./package.json').version")"
+          if [ "$PKG_VERSION" != "$GITHUB_REF_NAME" ]; then
+            echo "❌ Tag $GITHUB_REF_NAME does not match package.json ($PKG_VERSION)"
             exit 1
           fi
 
-      # Step 8: Show library size
-      - name: Check library size
+      - name: Install dependencies
+        run: npm ci
+
+      # prepublishOnly runs format check, tests and build:lib
+      - name: Publish
         run: |
-          SIZE=$(du -sh library | cut -f1)
-          echo "📦 Total library size: $SIZE"
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [[ "$VERSION" == *-* ]]; then
+            npm publish --tag next
+          else
+            npm publish
+          fi
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v v="$VERSION" '
+            $0 ~ "^## \\[" v "\\]" { found = 1; next }
+            found && /^## \[/ { exit }
+            found && /^---$/ { exit }
+            found { print }
+          ' CHANGELOG.md > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "See CHANGELOG.md" > release-notes.md
+          fi
+          PRERELEASE=""
+          [[ "$VERSION" == *-* ]] && PRERELEASE="--prerelease"
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file release-notes.md \
+            $PRERELEASE

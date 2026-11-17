@@ -40,7 +40,7 @@
   }
 
   .stepper-active .stepper-index {
-    @apply bg-primary border-transparent text-white;
+    @apply bg-primary text-on-primary border-transparent;
   }
 
   .stepper-muted .stepper-index {
