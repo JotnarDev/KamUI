@@ -1,10 +1,1 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="KamUI logo">
-  <!-- Brazo derecho superior -->
-  <rect x="100" y="10" width="50" height="100" rx="25" transform="rotate(45 125 60)" fill="#2f27ce"/>
-  <!-- Brazo derecho inferior -->
-  <rect x="100" y="90" width="50" height="100" rx="25" transform="rotate(-45 125 140)" fill="#2f27ce"/>
-  <!-- Centro horizontal -->
-  <rect x="40" y="70" width="80" height="60" rx="30" fill="#dddbff"/>
-  <!-- Barra vertical izquierda -->
-  <rect x="30" y="20" width="50" height="160" rx="25" fill="#2f27ce"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t"><title id="t">KamUI</title><path fill="#2f27ce" d="M17.92 59.28L17.92 195.51A34.06 34.06 0 0 0 86.04 195.51L86.04 59.28A34.06 34.06 0 0 0 17.92 59.28ZM161.21 149.04L226.89 83.36A34.06 34.06 0 0 0 178.72 35.19L113.04 100.88A34.06 34.06 0 0 0 161.21 149.04Z"/><path fill="#0891b2" d="M165.1 194.29a36.49 36.49 0 1 0 72.98 0a36.49 36.49 0 1 0 -72.98 0Z"/></svg>

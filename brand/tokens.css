@@ -1,0 +1,11 @@
+/* KamUI — variables del logo.
+   Los colores de marca viven en src/library/theme/color.css:
+   --color-primary (estructura) y --color-atom (átomo). */
+:root {
+  --kamui-logo-ink: var(--color-primary, #2f27ce);
+  --kamui-logo-accent: var(--color-atom, #0891b2);
+}
+
+/* Uso con symbol/kamui-symbol-currentcolor.svg en línea:
+   <svg class="kamui-logo" …> → la línea y la diagonal siguen `color`; el punto, --kamui-logo-accent */
+.kamui-logo { color: var(--kamui-logo-ink); }
