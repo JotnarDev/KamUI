@@ -9,9 +9,59 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.1.0] - 2026-11-16
+
 ### Added
 
-- Initial project setup
+- ✨ `--color-on-primary` and `--color-on-info` tokens for text on solid fills (`text-on-primary`, `text-on-info`)
+- ✨ `--color-atom` brand token (light `#0891b2`, dark `#22d3ee`) for focus and selection accents
+- ✨ Brand kit in `brand/`: symbol, lockups, avatars, web icons, PNG exports and `tokens.css`
+- ✨ Publish workflow: pushing a `v*.*.*` tag publishes to npm with provenance and creates the GitHub Release
+
+### Changed
+
+- 🔄 New "Primitivos" K logo (line · diagonal · dot) in README banners, favicon and demo
+- 🔄 Dark-mode primary is now a light tint (`#8b85ff`) readable both as text and as a fill with dark text
+- 🔄 Info color moves from cyan to sky (light `#0369a1`, dark `#38bdf8`); cyan is reserved for the brand atom
+- 🔄 Alerts, avatars, badges, buttons, pagination, stepper, toasts and tooltips use `text-on-primary` / `text-on-info` instead of `text-white`
+- 🔄 `npm run release:*` no longer publishes from the local machine; it bumps, tags and pushes, and CI publishes
+
+### Upgrade notes
+
+- If you place `text-white` on `bg-primary` or `bg-info` in your own markup, switch to `text-on-primary` / `text-on-info`: in dark mode those fills are now light, so white text loses contrast.
+
+---
+
+## [1.0.3] - 2026-01-25
+
+### Changed
+
+- 🔄 Republish of 1.0.2 (1.0.2 was tagged but never reached npm)
+
+---
+
+## [1.0.2] - 2026-01-25
+
+### Changed
+
+- 🔄 Package described as a framework-agnostic CSS library; keywords added for React, Next.js, Astro, Svelte, Nuxt, Angular, Solid and Qwik
+- 🔄 README rewritten with per-framework setup guides
+
+### Fixed
+
+- 🐛 Demo breadcrumb, form and blockquote examples still referenced Flowbite
+
+---
+
+## [1.0.1] - 2026-01-25
+
+### Added
+
+- ✨ Full color scale per role (`hover`, `focus`, `active`, `ring`) for light and dark mode
+- ✨ Dark mode via `.dark` class on `<html>`, plus `prefers-color-scheme` fallback (opt out with `.light`)
+- ✨ `version:*` and `release:*` npm scripts
 
 ---
 
@@ -40,6 +90,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tables** - Striped, hover, responsive tables
 - **Tabs** - Base, underline, pill variants
 - **Typography** - Headings, paragraphs, links, text styles
+- **Accordion**, **Dividers**, **List groups**, **Pagination**, **Progress**, **Spinners**, **Stepper**, **Toasts**, **Tooltips**
 
 #### Theme Colors
 
@@ -72,9 +123,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
-| Version | Date       | Description     |
-| ------- | ---------- | --------------- |
-| 1.0.0   | 2026-01-25 | Initial release |
+| Version | Date       | Description                               |
+| ------- | ---------- | ----------------------------------------- |
+| 1.1.0   | 2026-11-16 | New brand, on-color tokens, CI publishing |
+| 1.0.3   | 2026-01-25 | Republish of 1.0.2                        |
+| 1.0.2   | 2026-01-25 | Framework-agnostic positioning, README    |
+| 1.0.1   | 2026-01-25 | Full theme scales, dark mode class        |
+| 1.0.0   | 2026-01-25 | Initial release                           |
 
 ---
 
@@ -138,5 +193,9 @@ We use [Semantic Versioning](https://semver.org/):
 - [GitHub Releases](https://github.com/JotnarDev/KamUI/releases)
 - [npm Package](https://www.npmjs.com/package/kamui)
 
-[Unreleased]: https://github.com/JotnarDev/KamUI/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/JotnarDev/KamUI/releases/tag/v1.0.0
+[Unreleased]: https://github.com/JotnarDev/KamUI/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/JotnarDev/KamUI/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/JotnarDev/KamUI/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/JotnarDev/KamUI/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/JotnarDev/KamUI/compare/d65a953...v1.0.1
+[1.0.0]: https://github.com/JotnarDev/KamUI/tree/d65a953
