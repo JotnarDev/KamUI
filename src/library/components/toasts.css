@@ -69,7 +69,7 @@
   }
 
   .toast-solid {
-    @apply bg-primary border-transparent text-white;
+    @apply bg-primary text-on-primary border-transparent;
   }
 
   .toast-solid .toast-message {

@@ -94,7 +94,7 @@
   }
 
   .tooltip-info {
-    @apply bg-info text-white;
+    @apply bg-info text-on-info;
   }
 
   .tooltip-info .tooltip-arrow {

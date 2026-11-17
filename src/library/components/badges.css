@@ -134,7 +134,7 @@
      ======================================== */
 
   .badge-default-solid {
-    @apply bg-primary text-white;
+    @apply bg-primary text-on-primary;
   }
 
   .badge-success-solid {
@@ -150,7 +150,7 @@
   }
 
   .badge-info-solid {
-    @apply bg-info text-white;
+    @apply bg-info text-on-info;
   }
 
   .badge-gray-solid {

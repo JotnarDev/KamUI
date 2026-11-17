@@ -10,6 +10,7 @@
   --color-primary-focus: #3a31d8;
   --color-primary-active: #1f1a9e;
   --color-primary-ring: #c7c4ff;
+  --color-on-primary: #ffffff;
 
   /* Secondary */
   --color-secondary: #dddbff;
@@ -49,22 +50,28 @@
   --color-error-active: #7f1d1d;
   --color-error-ring: #fecaca;
 
-  --color-info: #0284c7;
-  --color-info-hover: #0369a1;
-  --color-info-focus: #0ea5e9;
+  --color-info: #0369a1;
+  --color-info-hover: #075985;
+  --color-info-focus: #0277b4;
   --color-info-active: #0c4a6e;
   --color-info-ring: #bae6fd;
+  --color-on-info: #ffffff;
+
+  /* Brand atom (logo dot, focus/selection signature) */
+  --color-atom: #0891b2;
 }
 
 /* =============================================
    DARK MODE - Via .dark class on <html>
    ============================================= */
 .dark {
-  --color-primary: #3a31d8;
-  --color-primary-hover: #2f27ce;
-  --color-primary-focus: #4b42e6;
-  --color-primary-active: #201aa6;
-  --color-primary-ring: #4b46a6;
+  /* Light tint: readable as text (6.9:1) and as a fill with dark text */
+  --color-primary: #8b85ff;
+  --color-primary-hover: #a5a1ff;
+  --color-primary-focus: #9893ff;
+  --color-primary-active: #7b74f7;
+  --color-primary-ring: #3b3790;
+  --color-on-primary: #010104;
 
   --color-secondary: #020024;
   --color-secondary-hover: #0b0a3a;
@@ -100,11 +107,15 @@
   --color-error-active: #b91c1c;
   --color-error-ring: #7f1d1d;
 
-  --color-info: #06b6d4;
-  --color-info-hover: #0891b2;
-  --color-info-focus: #22d3ee;
-  --color-info-active: #0e7490;
-  --color-info-ring: #164e63;
+  /* Sky, not cyan: cyan is reserved for the brand atom */
+  --color-info: #38bdf8;
+  --color-info-hover: #7dd3fc;
+  --color-info-focus: #5cc8fa;
+  --color-info-active: #0ea5e9;
+  --color-info-ring: #0c4a6e;
+  --color-on-info: #010104;
+
+  --color-atom: #22d3ee;
 }
 
 /* =============================================
@@ -113,11 +124,13 @@
    ============================================= */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --color-primary: #3a31d8;
-    --color-primary-hover: #2f27ce;
-    --color-primary-focus: #4b42e6;
-    --color-primary-active: #201aa6;
-    --color-primary-ring: #4b46a6;
+    /* Light tint: readable as text (6.9:1) and as a fill with dark text */
+    --color-primary: #8b85ff;
+    --color-primary-hover: #a5a1ff;
+    --color-primary-focus: #9893ff;
+    --color-primary-active: #7b74f7;
+    --color-primary-ring: #3b3790;
+    --color-on-primary: #010104;
 
     --color-secondary: #020024;
     --color-secondary-hover: #0b0a3a;
@@ -153,10 +166,14 @@
     --color-error-active: #b91c1c;
     --color-error-ring: #7f1d1d;
 
-    --color-info: #06b6d4;
-    --color-info-hover: #0891b2;
-    --color-info-focus: #22d3ee;
-    --color-info-active: #0e7490;
-    --color-info-ring: #164e63;
+    /* Sky, not cyan: cyan is reserved for the brand atom */
+    --color-info: #38bdf8;
+    --color-info-hover: #7dd3fc;
+    --color-info-focus: #5cc8fa;
+    --color-info-active: #0ea5e9;
+    --color-info-ring: #0c4a6e;
+    --color-on-info: #010104;
+
+    --color-atom: #22d3ee;
   }
 }
